@@ -1,0 +1,24 @@
+{
+    "stats": [
+        {
+            "number": 40,
+            "suffix": "+",
+            "label": "Products"
+        },
+        {
+            "number": 3,
+            "suffix": "",
+            "label": "Trusted Brands"
+        },
+        {
+            "number": 18,
+            "suffix": "+",
+            "label": "Years Experience"
+        },
+        {
+            "number": 500,
+            "suffix": "+",
+            "label": "Happy Clients"
+        }
+    ]
+}

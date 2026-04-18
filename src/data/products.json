@@ -1,0 +1,515 @@
+{
+  "categories": [
+    {
+      "id": "adhesive-tape",
+      "name": "Adhesive Tape",
+      "tagline": "Industrial Adhesive Solutions",
+      "description": "Manufacturer and supplier of a wide range of industrial adhesive tapes including surface protection, foam gasket, anti-skid, security void, masking, tissue, and double-sided tapes.",
+      "image": "/images/products/surface-protection-tape-ai.png",
+      "featured": true,
+      "products": [
+        {
+          "id": "surface-protection-tape",
+          "name": "Surface Protection Tape",
+          "description": "Self-adhesive surface protection tape for safeguarding surfaces during manufacturing, transportation, and installation processes.",
+          "image": "/images/products/surface-protection-tape-ai.png"
+        },
+        {
+          "id": "d-shape-pu-foam-gasket",
+          "name": "D Shape PU Foam Gasket",
+          "description": "D-shaped polyurethane foam gasket tape for sealing, cushioning, and vibration dampening in electrical panels and enclosures.",
+          "image": "/images/products/gasket-cat-user.png"
+        },
+        {
+          "id": "anti-skid-tapes",
+          "name": "Anti Skid Tapes",
+          "description": "High-grip anti-skid adhesive tapes for slip-resistant surfaces in industrial, commercial, and residential applications.",
+          "image": "/images/products/anti-skid-tape-ai.png"
+        },
+        {
+          "id": "security-void-tape",
+          "name": "Security Void Tape",
+          "description": "Tamper-evident security void tape that reveals a hidden message when removed, used for packaging security and anti-theft applications.",
+          "image": "/images/products/security-void-tape-ai.png"
+        },
+        {
+          "id": "double-sided-tape",
+          "name": "Double Sided Tape",
+          "description": "High-performance double-sided adhesive tape for permanent mounting, bonding, and assembly applications across industries.",
+          "image": "/images/products/double-sided-tape-ai.png"
+        },
+        {
+          "id": "security-tape-void",
+          "name": "Security Tape (Void Tape)",
+          "description": "Security sealing tape with void pattern that provides tamper evidence for packaging and shipment protection.",
+          "image": "/images/products/security-void-tape-ai.png"
+        },
+        {
+          "id": "steel-grip-insulation-tape",
+          "name": "Steel Grip Insulation Tape",
+          "description": "Premium quality Steel Grip brand PVC electrical insulation tape with excellent dielectric strength and moisture resistance.",
+          "specs": {
+            "Brand": "Steelgrip"
+          },
+          "image": "/images/brands/ai-steelgrip.png"
+        },
+        {
+          "id": "paper-masking-abro-tape",
+          "name": "Paper Masking Abro Tape",
+          "description": "Abro brand crepe paper masking tape used in powder coating, carpentry jobs, painting, and surface protection applications.",
+          "specs": {
+            "Brand": "Abro"
+          },
+          "image": "/images/brands/ai-abro.png"
+        },
+        {
+          "id": "pvc-insulation-tape",
+          "name": "PVC Insulation Tape",
+          "description": "General-purpose PVC insulation tape for electrical wiring, harnessing, and colour coding of cables and connections.",
+          "image": "/images/products/pvc-insulation-tape-ai.png"
+        },
+        {
+          "id": "adhesive-foam-gasket",
+          "name": "Adhesive Foam Gasket",
+          "description": "Self-adhesive closed-cell foam gasket for sealing and cushioning in electrical enclosures and industrial equipment.",
+          "image": "/images/products/adhesive-foam-gasket-ai.png"
+        },
+        {
+          "id": "tissue-tape",
+          "name": "Tissue Tape",
+          "description": "Tissue-based adhesive tape for general mounting and bonding applications requiring thin, conformable tape.",
+          "image": "/images/products/tissue-tape-ai.png"
+        },
+        {
+          "id": "double-sided-tissue-tapes",
+          "name": "Double Sided Tissue Tapes",
+          "description": "Double-sided tissue-carrier adhesive tapes for lightweight bonding, mounting, and lamination applications.",
+          "image": "/images/products/double-sided-tissue-ai.png"
+        }
+      ]
+    },
+    {
+      "id": "cable-lugs",
+      "name": "Cable Lugs",
+      "tagline": "Reliable Electrical Connections",
+      "description": "Supplier of aluminium and copper cable lugs for reliable electrical connections in power distribution and panel wiring systems.",
+      "image": "/images/products/ai-cable-lugs.png",
+      "featured": true,
+      "products": [
+        {
+          "id": "aluminium-copper-lugs",
+          "name": "Aluminium & Copper Lugs",
+          "description": "Crimping type aluminium and copper cable lugs for power distribution connections, available in various sizes.",
+          "image": "/images/products/ai-cable-lugs.png"
+        },
+        {
+          "id": "copper-insulated-lugs",
+          "name": "Copper Insulated Lugs",
+          "description": "Insulated copper cable lugs with PVC insulation for safe and reliable electrical terminations.",
+          "image": "/images/products/copper-insulated-lugs-ai.png"
+        }
+      ]
+    },
+    {
+      "id": "sealing-tape",
+      "name": "Sealing Tape",
+      "tagline": "Industrial Sealing Solutions",
+      "description": "Cross filament and HDPE tarpaulin tapes for heavy-duty sealing, strapping, and packaging applications.",
+      "image": "/images/products/cross-filament-tape-ai.png",
+      "featured": false,
+      "products": [
+        {
+          "id": "cross-filament-tape",
+          "name": "Cross Filament Tape",
+          "description": "Reinforced cross-filament tape with glass fibre for heavy-duty carton sealing and strapping applications.",
+          "image": "/images/products/cross-filament-tape-ai.png"
+        },
+        {
+          "id": "hdpe-tarpaulin-tape",
+          "name": "HDPE Tarpaulin Tape",
+          "description": "HDPE tarpaulin tape for sealing and repairing tarpaulins, waterproof covering, and outdoor packaging.",
+          "image": "/images/products/hdpe-tarpaulin-tape-ai.png"
+        }
+      ]
+    },
+    {
+      "id": "pvc-sleeves",
+      "name": "PVC Sleeves",
+      "tagline": "Wire Identification & Protection",
+      "description": "Flexible PVC sleeves and white ferruling tubes for wire identification, bundling, and insulation protection.",
+      "image": "/images/products/ai-pvc-sleeves.png",
+      "featured": false,
+      "products": [
+        {
+          "id": "pvc-sleeves-product",
+          "name": "PVC Sleeves",
+          "description": "Flexible PVC sleeving for wire identification, bundling, and insulation protection in electrical panels.",
+          "image": "/images/products/ai-pvc-sleeves.png"
+        },
+        {
+          "id": "white-ferruling-tube",
+          "name": "White Ferruling Tube",
+          "description": "White PVC ferruling tubes for wire end identification and marking in switchgear and control panels.",
+          "image": "/images/products/white-ferruling-tube-ai.png"
+        }
+      ]
+    },
+    {
+      "id": "nylon-cable-tie",
+      "name": "Nylon Cable Tie",
+      "tagline": "Secure Cable Management",
+      "description": "Self-locking nylon cable ties for secure wire bundling and cable management in industrial installations.",
+      "image": "/images/products/ai-cable-ties.png",
+      "featured": true,
+      "products": [
+        {
+          "id": "nylon-cable-ties",
+          "name": "Nylon Cable Ties",
+          "description": "High-quality nylon 6.6 self-locking cable ties available in various sizes for professional cable management.",
+          "image": "/images/products/ai-cable-ties.png"
+        }
+      ]
+    },
+    {
+      "id": "door-hinges",
+      "name": "Door Hinges",
+      "tagline": "Panel Door Hardware",
+      "description": "Spring panel hinges for electrical panel doors and industrial enclosure applications.",
+      "image": "/images/products/ai-door-hinges.png",
+      "featured": false,
+      "products": [
+        {
+          "id": "spring-panel-hinges",
+          "name": "Spring Panel Hinges",
+          "description": "Spring-loaded panel hinges for electrical panel doors, providing secure closure and easy access.",
+          "image": "/images/products/ai-door-hinges.png"
+        }
+      ]
+    },
+    {
+      "id": "cable-tray",
+      "name": "Cable Tray",
+      "tagline": "Cable Routing Solutions",
+      "description": "PVC channels and cable ducts for organized cable routing inside electrical panels and enclosures.",
+      "image": "/images/products/cable-tray-user.png",
+      "featured": false,
+      "products": [
+        {
+          "id": "pvc-channels-cable-duct",
+          "name": "PVC Channels (Cable Duct)",
+          "description": "PVC wiring channels for organized cable routing inside electrical panels and control enclosures.",
+          "image": "/images/products/pvc-channels-user.png"
+        }
+      ]
+    },
+    {
+      "id": "brass-cable-glands",
+      "name": "Brass Cable Glands",
+      "tagline": "Secure Cable Entry",
+      "description": "Brass cable glands with single and double compression for secure cable entry into enclosures with strain relief.",
+      "image": "/images/products/brass-cable-glands-hq.jpg",
+      "featured": true,
+      "products": [
+        {
+          "id": "double-compression-glands",
+          "name": "Double Compression Glands",
+          "description": "Brass double compression cable glands for secure cable entry with superior strain relief and IP protection.",
+          "image": "/images/products/double-compression-glands-scraped.jpg"
+        },
+        {
+          "id": "cable-glands-sc",
+          "name": "Cable Glands - S.C.",
+          "description": "Single compression brass cable glands for standard cable entry applications in electrical enclosures.",
+          "image": "/images/products/cable-glands-sc-scraped.webp"
+        }
+      ]
+    },
+    {
+      "id": "spiral-sleeve",
+      "name": "Spiral Sleeve",
+      "tagline": "Cable Bundling & Insulation",
+      "description": "Spiral sleeves and busbar heat shrink sleeves for cable bundling, protection, and busbar insulation.",
+      "image": "/images/products/spiral-sleeve-product-indiamart.jpg",
+      "featured": false,
+      "products": [
+        {
+          "id": "busbar-sleeve-heat-shrink",
+          "name": "Busbar Sleeve (Heat Shrink Sleeve)",
+          "description": "Heat-shrinkable busbar sleeves for insulation and phase identification in power distribution panels.",
+          "image": "/images/products/busbar-sleeve-heat-shrink-scraped.jpg"
+        },
+        {
+          "id": "spiral-sleeve-product",
+          "name": "Spiral Sleeve",
+          "description": "Polyethylene spiral wrapping bands for neat cable bundling and protection against abrasion.",
+          "image": "/images/products/spiral-sleeve-product-indiamart.jpg"
+        }
+      ]
+    },
+    {
+      "id": "tie-pad",
+      "name": "Tie Pad",
+      "tagline": "Cable Routing Accessories",
+      "description": "Tie mounts and sticking saddles for cable tie routing and management inside electrical panels.",
+      "image": "/images/products/tie-base-user.png",
+      "featured": false,
+      "products": [
+        {
+          "id": "tie-mount-sticking-saddle",
+          "name": "Tie Mount (Sticking Saddle)",
+          "description": "Self-adhesive and screw-type tie mounts for cable tie routing and management inside panels.",
+          "image": "/images/products/tie-base-user.png"
+        }
+      ]
+    },
+    {
+      "id": "solar-connector",
+      "name": "Solar Connector",
+      "tagline": "Photovoltaic Connectors",
+      "description": "Solar MC4 connectors for photovoltaic system installations and solar panel wiring.",
+      "image": "/images/products/ai-solar-connector.png",
+      "featured": false,
+      "products": [
+        {
+          "id": "solar-mc4-connector",
+          "name": "Solar MC4 Connector",
+          "description": "MC4 solar connectors (male and female) for reliable photovoltaic panel wiring and solar installations.",
+          "image": "/images/products/ai-solar-connector.png"
+        }
+      ]
+    },
+    {
+      "id": "electrical-insulation-tape",
+      "name": "Electrical Insulation Tape",
+      "tagline": "Electrical Safety",
+      "description": "Premium quality electrical insulation tapes for wiring, harnessing, and colour coding applications.",
+      "image": "/images/products/electrical-tape-user.png",
+      "featured": false,
+      "products": [
+        {
+          "id": "electrical-insulation-tapes",
+          "name": "Electrical Insulation Tapes",
+          "description": "Premium PVC electrical insulation tapes available in multiple colours for wiring and colour coding.",
+          "image": "/images/products/electrical-tape-user.png"
+        }
+      ]
+    },
+    {
+      "id": "cable-glands",
+      "name": "Cable Glands",
+      "tagline": "Cable Entry Solutions",
+      "description": "PVC and nylon cable glands for secure cable entry in wiring and control panel applications.",
+      "image": "/images/products/ai-cable-glands.png",
+      "featured": false,
+      "products": [
+        {
+          "id": "pvc-cable-glands",
+          "name": "PVC Cable Glands",
+          "description": "PVC cable glands for cost-effective cable entry and strain relief in light-duty enclosures.",
+          "image": "/images/products/pvc-cable-glands-scraped.jpg"
+        },
+        {
+          "id": "cable-glands-product",
+          "name": "Cable Glands",
+          "description": "Standard cable glands for secure cable entry into electrical enclosures with strain relief.",
+          "image": "/images/products/ai-cable-glands.png"
+        }
+      ]
+    },
+    {
+      "id": "heat-shrink-sleeve",
+      "name": "Heat Shrink Sleeve",
+      "tagline": "Insulation & Protection",
+      "description": "Woer brand heat-shrinkable sleeves for electrical insulation, strain relief, and cable protection.",
+      "image": "/images/products/heat-shrink-user.png",
+      "featured": true,
+      "products": [
+        {
+          "id": "heat-shrinkable-sleeve-woer",
+          "name": "Heat Shrinkable Sleeve - Woer",
+          "description": "Woer brand heat-shrinkable tubing for electrical insulation, strain relief, and environmental protection of connections.",
+          "specs": {
+            "Brand": "Woer"
+          },
+          "image": "/images/products/heat-shrink-user.png"
+        }
+      ]
+    },
+    {
+      "id": "end-sealing-lugs",
+      "name": "End Sealing Lugs",
+      "tagline": "Wire End Termination",
+      "description": "Bootlace lugs (ferrules) for wire end termination and identification in switchgear and control panels.",
+      "image": "/images/products/ai-end-sealing.png",
+      "featured": false,
+      "products": [
+        {
+          "id": "end-sealing-lugs-bootlace",
+          "name": "End Sealing Lugs (Bootlace Lugs)",
+          "description": "Insulated bootlace ferrules for wire end termination, available in DIN-coded colours for identification.",
+          "image": "/images/products/ai-end-sealing.png"
+        }
+      ]
+    },
+    {
+      "id": "ferruling-machine-ribbon",
+      "name": "Ferruling Machine Ribbon",
+      "tagline": "Wire Marking Supplies",
+      "description": "Hot stamping ribbons for ferruling machines used in wire marking and identification.",
+      "image": "/images/products/ferruling-ribbon-user.png",
+      "featured": false,
+      "products": [
+        {
+          "id": "ribbon-ferruling-machine",
+          "name": "Ribbon For Ferruling Machine",
+          "description": "Hot stamping ribbon cassettes for ferruling machines, used in printing identification marks on ferruling tubes.",
+          "image": "/images/products/ferruling-ribbon-user.png"
+        }
+      ]
+    },
+    {
+      "id": "busbar-support",
+      "name": "Busbar Support",
+      "tagline": "Power Distribution Mounting",
+      "description": "Finger type busbar supports for secure mounting and insulation of busbars in switchgear and distribution panels.",
+      "image": "/images/products/ai-busbar-support.png",
+      "featured": true,
+      "products": [
+        {
+          "id": "finger-type-busbar-support",
+          "name": "Finger Type Busbar Support",
+          "description": "DMC/SMC finger type busbar supports for secure mounting and insulation of busbars in panel boards.",
+          "image": "/images/products/ai-busbar-support.png"
+        }
+      ]
+    },
+    {
+      "id": "mcb-channel",
+      "name": "MCB Channel",
+      "tagline": "DIN Rail Mounting",
+      "description": "MCB DIN rail channels for mounting miniature circuit breakers and other rail-mounted components.",
+      "image": "/images/products/mcb-din-rail-channel-scraped.jpg",
+      "featured": false,
+      "products": [
+        {
+          "id": "mcb-din-rail-channel",
+          "name": "MCB Din Rail Channel",
+          "description": "Standard TS35 DIN rail channels for mounting MCBs, terminal blocks, relays, and other panel components.",
+          "image": "/images/products/mcb-din-rail-channel-scraped.jpg"
+        }
+      ]
+    },
+    {
+      "id": "crimping-tools",
+      "name": "Crimping Tools",
+      "tagline": "Professional Termination Tools",
+      "description": "Cable lugs crimping tools for precise and reliable cable lug terminations in electrical installations.",
+      "image": "/images/products/crimping-tool-user.png",
+      "featured": false,
+      "products": [
+        {
+          "id": "lugs-crimping-tools",
+          "name": "Lugs Crimping Tools",
+          "description": "Professional crimping tools for precise and reliable cable lug terminations, available in hydraulic and manual types.",
+          "image": "/images/products/crimping-tool-user.png"
+        }
+      ]
+    },
+    {
+      "id": "panel-locks-keys",
+      "name": "Panel Locks & Keys",
+      "tagline": "Enclosure Security",
+      "description": "DC panel locks and keys for securing electrical enclosures and panel doors.",
+      "image": "/images/products/ai-panel-locks.png",
+      "featured": false,
+      "products": [
+        {
+          "id": "dc-panel-locks-keys",
+          "name": "DC Panel Locks & Keys",
+          "description": "Panel locks and keys for securing electrical enclosures, available in cam lock and quarter-turn configurations.",
+          "image": "/images/products/ai-panel-locks.png"
+        }
+      ]
+    },
+    {
+      "id": "cable-ties",
+      "name": "Cable Ties",
+      "tagline": "Wire Management",
+      "description": "Cable wire zip ties for bundling and organizing cables in electrical and industrial applications.",
+      "image": "/images/products/cable-ties-user.png",
+      "featured": false,
+      "products": [
+        {
+          "id": "cable-wire-zip-ties",
+          "name": "Cable Wire Zip Ties",
+          "description": "Nylon cable wire zip ties for secure bundling and organization of cables in various installations.",
+          "image": "/images/products/cable-ties-user.png"
+        }
+      ]
+    },
+    {
+      "id": "foil-tape",
+      "name": "Foil Tape",
+      "tagline": "Shielding & Sealing",
+      "description": "Aluminium foil tape for EMI/RFI shielding, heat reflection, and HVAC duct sealing applications.",
+      "image": "/images/products/ai-foil-tape.png",
+      "featured": false,
+      "products": [
+        {
+          "id": "aluminium-foil-tape",
+          "name": "Aluminium Foil Tape",
+          "description": "Dead-soft aluminium foil tape for EMI/RFI shielding, heat reflection, and HVAC duct sealing applications.",
+          "image": "/images/products/ai-foil-tape.png"
+        }
+      ]
+    },
+    {
+      "id": "gasket",
+      "name": "Gasket",
+      "tagline": "Sealing & Edge Protection",
+      "description": "U-shape rubber gaskets for edge protection and sealing in electrical panels and enclosures.",
+      "image": "/images/products/gasket-cat-user.png",
+      "featured": false,
+      "products": [
+        {
+          "id": "u-shape-rubber-gasket",
+          "name": "U Shape Rubber Gasket",
+          "description": "U-shaped rubber gaskets for edge protection, sealing, and vibration dampening in panels and enclosures.",
+          "image": "/images/products/u-shape-gasket-user.png"
+        }
+      ]
+    },
+    {
+      "id": "insulators",
+      "name": "Insulators",
+      "tagline": "Busbar Insulation",
+      "description": "Busbar insulators for insulating and supporting busbars in power distribution and switchgear systems.",
+      "image": "/images/products/busbar-insulators-scraped.jpg",
+      "featured": false,
+      "products": [
+        {
+          "id": "busbar-insulators",
+          "name": "Busbar Insulators",
+          "description": "DMC and SMC busbar insulators for secure insulation and support of busbars in distribution panels.",
+          "image": "/images/products/busbar-insulators-scraped.jpg"
+        }
+      ]
+    },
+    {
+      "id": "polyester-tape",
+      "name": "Polyester Tape",
+      "tagline": "High-Temperature Insulation",
+      "description": "Polyester film tapes with excellent electrical insulation properties for transformers, motors, and coil wrapping.",
+      "image": "/images/products/polyester-tapes-scraped.jpg",
+      "featured": false,
+      "products": [
+        {
+          "id": "polyester-tapes",
+          "name": "Polyester Tapes",
+          "description": "High-tensile polyester film tapes with excellent electrical insulation properties for transformers and motors.",
+          "image": "/images/products/polyester-tapes-scraped.jpg"
+        }
+      ]
+    }
+  ]
+}

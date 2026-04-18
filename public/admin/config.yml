@@ -1,0 +1,103 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# Media files stored in public/images
+media_folder: "public/images"
+public_folder: "/images"
+
+# Logo in CMS
+logo_url: "/favicon.svg"
+site_url: "https://yashada.netlify.app"
+
+collections:
+  # ─── Products ───
+  - name: "products"
+    label: "Products"
+    label_singular: "Product"
+    description: "Manage your product catalog"
+    folder: "content/products"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Product Name", name: "title", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string", hint: "URL-friendly name, e.g. 'foam-gasket'" }
+      - { label: "Category", name: "category", widget: "select",
+          options: ["Self-Adhesive Tapes", "PVC Insulation Tapes", "Cable Management", "Panel Accessories", "Lugs & Connectors", "Wires & Cables"] }
+      - { label: "Product Image", name: "image", widget: "image", required: false }
+      - { label: "Short Description", name: "description", widget: "text" }
+      - { label: "Features", name: "features", widget: "list",
+          field: { label: "Feature", name: "feature", widget: "string" } }
+      - label: "Specifications"
+        name: "specs"
+        widget: "list"
+        required: false
+        fields:
+          - { label: "Property", name: "property", widget: "string" }
+          - { label: "Value", name: "value", widget: "string" }
+      - { label: "Brand", name: "brand", widget: "string", required: false, hint: "e.g. Surelock, Woer, Premium" }
+      - { label: "Featured", name: "featured", widget: "boolean", default: false, hint: "Show on homepage?" }
+      - { label: "Order", name: "order", widget: "number", default: 0, hint: "Lower = shows first" }
+
+  # ─── Brands ───
+  - name: "brands"
+    label: "Brands"
+    label_singular: "Brand"
+    description: "Manage partner/distributor brands"
+    folder: "content/brands"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Brand Name", name: "title", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Logo", name: "logo", widget: "image", required: false }
+      - { label: "Tagline", name: "tagline", widget: "string", required: false }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Website", name: "website", widget: "string", required: false }
+
+  # ─── Company Info (singleton) ───
+  - name: "settings"
+    label: "Site Settings"
+    description: "Company information & contact details"
+    files:
+      - label: "Company Info"
+        name: "company"
+        file: "content/settings/company.json"
+        fields:
+          - { label: "Company Name", name: "company_name", widget: "string" }
+          - { label: "Tagline", name: "tagline", widget: "string" }
+          - { label: "Phone", name: "phone", widget: "string" }
+          - { label: "WhatsApp", name: "whatsapp", widget: "string" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Address", name: "address", widget: "text" }
+          - { label: "Google Maps Embed URL", name: "maps_url", widget: "string", required: false }
+          - { label: "Working Hours", name: "hours", widget: "string" }
+          - { label: "Founded Year", name: "founded", widget: "string" }
+
+      - label: "Homepage Stats"
+        name: "stats"
+        file: "content/settings/stats.json"
+        fields:
+          - label: "Statistics"
+            name: "stats"
+            widget: "list"
+            fields:
+              - { label: "Number", name: "number", widget: "number" }
+              - { label: "Suffix", name: "suffix", widget: "string", hint: "e.g. +, %, K" }
+              - { label: "Label", name: "label", widget: "string" }
+
+  # ─── Blog / Announcements ───
+  - name: "blog"
+    label: "Blog / News"
+    label_singular: "Post"
+    description: "Company news, product updates, industry articles"
+    folder: "content/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Featured Image", name: "image", widget: "image", required: false }
+      - { label: "Summary", name: "summary", widget: "text" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Tags", name: "tags", widget: "list", required: false }

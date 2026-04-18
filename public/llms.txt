@@ -1,0 +1,72 @@
+# Yashada Enterprises
+
+> Yashada Enterprises is a Nashik-based industrial supplier founded in 2005 by Dilip Brahmankar.
+> We manufacture self-adhesive tapes and are authorized distributors of industrial electrical
+> components including cable ties, cable glands, heat shrink sleeves, panel accessories, and busbar systems.
+
+## Key Information
+
+- **Founded**: 2005
+- **Founder**: Dilip Brahmankar
+- **Location**: Shop No. 11 & 12, Shree Sai Industrial Estate, Ambad, Nashik, Maharashtra 422010, India
+- **Phone**: +91 82089 97234 / 0253-6602234
+- **Email**: yashadaenterprises@gmail.com
+- **WhatsApp**: https://wa.me/918208997234
+- **Website**: https://yashada.netlify.app
+
+## Pages
+
+- [Home](https://yashada.netlify.app/): Landing page with product showcase and company overview
+- [Products](https://yashada.netlify.app/products/): Full catalog of industrial tapes and electrical components (42 products across 22 categories)
+- [Brands](https://yashada.netlify.app/brands/): Authorized distributor showcase for Steelgrip, Abro, Woer, and more
+- [About](https://yashada.netlify.app/about/): Company history, values, and founder profile
+- [Contact](https://yashada.netlify.app/contact/): Inquiry form, address, phone, and map
+- [llms-full.txt](https://yashada.netlify.app/llms-full.txt): Complete AI-optimized product and company data
+
+## What We Sell
+
+### Self-Adhesive Tapes (Manufactured In-House)
+- Surface Protection Tape
+- Anti-Skid Tape
+- Security Void / Tamper-Evident Tape
+- Double-Sided Tape (foam and tissue carrier)
+- PVC Insulation Tape
+- Paper Masking Tape (Abro brand)
+- BOPP Packing Tape
+- Aluminium Foil Tape
+- Polyester Film Tape
+- Cross Filament Tape
+- HDPE Tarpaulin Tape
+
+### Electrical Components (Authorized Distributor)
+- Nylon Cable Ties (Surelock brand)
+- Brass Cable Glands (single & double compression)
+- PVC Cable Glands
+- Heat Shrink Sleeves (Woer brand)
+- Busbar Sleeves (heat-shrinkable)
+- Busbar Insulators & Supports (finger-type, DMC/SMC)
+- MCB DIN Rail Channels (TS35)
+- PVC Cable Duct / Wiring Channels
+- End Sealing Lugs (Bootlace Ferrules)
+- Aluminium & Copper Cable Lugs
+- Cable Wire Zip Ties
+- Spring Panel Hinges
+- DC Panel Locks & Keys
+- Tie Mounts / Sticking Saddles
+- Solar MC4 Connectors
+- U-Shape Rubber Gaskets
+- PVC Sleeves & Ferruling Tubes
+- Spiral Sleeves
+- Lugs Crimping Tools
+
+## Authorized Brands
+- **Steelgrip**: Electrical insulation tapes
+- **Abro**: Masking, packaging, and adhesive tapes
+- **Woer**: Heat shrink sleeves and tubing
+- **Surelock**: Nylon cable ties
+
+## Business Hours
+Monday – Saturday: 9:00 AM – 7:00 PM IST
+
+## Service Area
+Nashik, Maharashtra, India. Supplies to panel builders, OEMs, and electrical contractors across Maharashtra and India.

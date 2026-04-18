@@ -1,0 +1,87 @@
+'use client';
+
+import { useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
+
+export default function CTASection() {
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      const el = sectionRef.current;
+
+      /* Label + heading reveal */
+      gsap.from(el.querySelector('.label'), {
+        scrollTrigger: { trigger: el, start: 'top 85%', toggleActions: 'play none none none' },
+        y: 20, opacity: 0, duration: 0.4, ease: 'power3.out',
+      });
+      gsap.from(el.querySelector('.contact-section__heading'), {
+        scrollTrigger: { trigger: el, start: 'top 82%', toggleActions: 'play none none none' },
+        y: 40, opacity: 0, duration: 0.6, ease: 'power3.out',
+      });
+
+      /* Cards stagger — from the bottom */
+      el.querySelectorAll('.contact-card').forEach((card, i) => {
+        gsap.from(card, {
+          scrollTrigger: { trigger: card, start: 'top 95%', toggleActions: 'play none none none' },
+          y: 50, opacity: 0, scale: 0.96,
+          duration: 0.6, delay: i * 0.1, ease: 'power3.out',
+        });
+      });
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
+  return (
+    <section className="contact-section section--dark" ref={sectionRef}>
+      <div className="container">
+        <div className="label" style={{ marginBottom: '1rem' }}>Get In Touch</div>
+        <h2 className="contact-section__heading">
+          LET&apos;S <span className="accent">CONNECT</span>
+        </h2>
+
+        <div className="contact-cards">
+          {/* Visit Us */}
+          <div className="contact-card">
+            <div className="contact-card__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div className="contact-card__title">Visit Us</div>
+            <div className="contact-card__detail">
+              Plot No-28 B-14, Flatted Building<br />
+              MIDC Satpur<br />
+              Nashik — 422010
+            </div>
+          </div>
+
+          {/* Call Us */}
+          <div className="contact-card">
+            <div className="contact-card__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div className="contact-card__title">Call Us</div>
+            <div className="contact-card__detail">
+              <a href="tel:02536602234">0253-6602234</a><br />
+              <a href="tel:+918208997234">8208997234</a>
+            </div>
+          </div>
+
+          {/* Email Us */}
+          <div className="contact-card">
+            <div className="contact-card__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div className="contact-card__title">Email Us</div>
+            <div className="contact-card__detail">
+              <a href="mailto:yashadaenterprises@gmail.com">yashadaenterprises@gmail.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

@@ -1,0 +1,272 @@
+# Yashada Enterprises — Complete Product & Company Data
+# This file is optimized for AI language model ingestion (llms-full.txt)
+# Website: https://yashada.netlify.app
+
+---
+
+## Company Overview
+
+**Name**: Yashada Enterprises  
+**Type**: Manufacturer & Authorized Distributor  
+**Founded**: 2005  
+**Founder**: Dilip Brahmankar  
+**Location**: Shop No. 11 & 12, Shree Sai Industrial Estate, Plot No. 7, Survey No. 81/82, Behind Power House, Ambad, Nashik, Maharashtra 422010, India  
+**Phone**: +91 82089 97234 | 0253-6602234  
+**Email**: yashadaenterprises@gmail.com  
+**WhatsApp**: https://wa.me/918208997234  
+**Business Hours**: Monday–Saturday, 9:00 AM – 7:00 PM IST  
+**GST**: Available on request  
+
+### About
+
+Yashada Enterprises has been a trusted name in industrial supply since 2005. We:
+1. **Manufacture** self-adhesive tapes in-house (surface protection, double-sided, foam gasket, anti-skid, security void, PVC insulation, etc.)
+2. **Distribute** premium industrial electrical components from 4+ authorized brands
+3. Serve **panel builders, OEMs, and electrical contractors** across Maharashtra and India
+
+---
+
+## Authorized Brands
+
+### Steelgrip
+Premium PVC electrical insulation tapes with excellent dielectric strength and moisture resistance. Used for cable harnessing, colour coding, and electrical safety.
+
+### Abro
+Masking, packaging, and adhesive tapes for carpentry, powder coating, painting, and surface protection. Known for quality crepe paper masking tape.
+
+### Woer
+Heat-shrinkable tubing and sleeves for electrical insulation, strain relief, and environmental protection of wire connections. Available in various diameters.
+
+### Surelock
+Nylon cable ties (nylon 6.6) for secure wire bundling and cable management in industrial and domestic installations.
+
+---
+
+## Complete Product Catalog (42 Products, 22 Categories)
+
+### 1. Adhesive Tape (12 products)
+**Category ID**: adhesive-tape  
+**Description**: Manufacturer and supplier of industrial adhesive tapes.
+
+| Product | Description |
+|---------|-------------|
+| Surface Protection Tape | Self-adhesive tape for safeguarding surfaces during manufacturing, transportation, and installation |
+| D Shape PU Foam Gasket | D-shaped polyurethane foam gasket tape for sealing and vibration dampening in electrical panels |
+| Anti Skid Tapes | High-grip adhesive tapes for slip-resistant surfaces in industrial applications |
+| Security Void Tape | Tamper-evident tape revealing hidden message when removed — packaging security |
+| Double Sided Tape | High-performance double-sided adhesive for permanent mounting and bonding |
+| Security Tape (Void Tape) | Security sealing tape with void pattern for tamper evidence |
+| Steel Grip Insulation Tape | Steelgrip brand PVC electrical insulation tape (Brand: Steelgrip) |
+| Paper Masking Abro Tape | Abro brand crepe paper masking tape for powder coating and painting (Brand: Abro) |
+| PVC Insulation Tape | General-purpose PVC insulation for electrical wiring and cable colour coding |
+| Adhesive Foam Gasket | Self-adhesive closed-cell foam gasket for electrical enclosures |
+| Tissue Tape | Tissue-based adhesive tape for mounting and bonding |
+| Double Sided Tissue Tapes | Tissue-carrier double-sided adhesive for lightweight bonding and lamination |
+
+### 2. Cable Lugs (2 products)
+**Category ID**: cable-lugs  
+**Description**: Aluminium and copper cable lugs for power distribution.
+
+| Product | Description |
+|---------|-------------|
+| Aluminium & Copper Lugs | Crimping type cable lugs for power distribution connections |
+| Copper Insulated Lugs | PVC-insulated copper cable lugs for safe electrical terminations |
+
+### 3. Sealing Tape (2 products)
+**Category ID**: sealing-tape  
+**Description**: Cross filament and HDPE tarpaulin tapes for heavy-duty sealing.
+
+| Product | Description |
+|---------|-------------|
+| Cross Filament Tape | Glass-fibre reinforced tape for heavy-duty carton sealing and strapping |
+| HDPE Tarpaulin Tape | HDPE tape for sealing and repairing tarpaulins and waterproof covers |
+
+### 4. PVC Sleeves (2 products)
+**Category ID**: pvc-sleeves  
+**Description**: Flexible PVC sleeves for wire identification.
+
+| Product | Description |
+|---------|-------------|
+| PVC Sleeves | Flexible PVC sleeving for wire bundling and insulation protection |
+| White Ferruling Tube | White PVC ferruling tubes for wire end identification in switchgear |
+
+### 5. Nylon Cable Tie (1 product)
+**Category ID**: nylon-cable-tie  
+**Description**: Self-locking nylon cable ties.
+
+| Product | Description |
+|---------|-------------|
+| Nylon Cable Ties | Nylon 6.6 self-locking cable ties in various sizes for cable management |
+
+### 6. Door Hinges (1 product)
+**Category ID**: door-hinges  
+
+| Product | Description |
+|---------|-------------|
+| Spring Panel Hinges | Spring-loaded panel hinges for electrical panel doors |
+
+### 7. Cable Tray (1 product)
+**Category ID**: cable-tray  
+
+| Product | Description |
+|---------|-------------|
+| PVC Channels (Cable Duct) | PVC wiring channels for organized cable routing inside electrical panels |
+
+### 8. Brass Cable Glands (2 products)
+**Category ID**: brass-cable-glands  
+**Description**: Brass cable glands for secure cable entry.
+
+| Product | Description |
+|---------|-------------|
+| Double Compression Glands | Brass double compression cable glands for superior strain relief and IP protection |
+| Cable Glands - S.C. | Single compression brass glands for standard cable entry applications |
+
+### 9. Spiral Sleeve (2 products)
+**Category ID**: spiral-sleeve  
+
+| Product | Description |
+|---------|-------------|
+| Busbar Sleeve (Heat Shrink) | Heat-shrinkable busbar sleeves for insulation and phase identification |
+| Spiral Sleeve | Polyethylene spiral wrapping bands for cable bundling |
+
+### 10. Tie Pad (1 product)
+**Category ID**: tie-pad  
+
+| Product | Description |
+|---------|-------------|
+| Tie Mount (Sticking Saddle) | Self-adhesive and screw-type tie mounts for cable routing |
+
+### 11. Solar Connector (1 product)
+**Category ID**: solar-connector  
+
+| Product | Description |
+|---------|-------------|
+| Solar MC4 Connector | MC4 solar connectors (male/female) for photovoltaic panel wiring |
+
+### 12. Electrical Insulation Tape (1 product)
+**Category ID**: electrical-insulation-tape  
+
+| Product | Description |
+|---------|-------------|
+| Electrical Insulation Tapes | Premium PVC electrical tapes in multiple colours for wiring and colour coding |
+
+### 13. Cable Glands (2 products)
+**Category ID**: cable-glands  
+
+| Product | Description |
+|---------|-------------|
+| PVC Cable Glands | PVC glands for cost-effective cable entry in light-duty enclosures |
+| Cable Glands | Standard cable glands for electrical enclosures |
+
+### 14. Heat Shrink Sleeve (1 product)
+**Category ID**: heat-shrink-sleeve  
+
+| Product | Description |
+|---------|-------------|
+| Heat Shrinkable Sleeve - Woer | Woer brand heat-shrinkable tubing (Brand: Woer) |
+
+### 15. End Sealing Lugs (1 product)
+**Category ID**: end-sealing-lugs  
+
+| Product | Description |
+|---------|-------------|
+| End Sealing Lugs (Bootlace Lugs) | Insulated bootlace ferrules in DIN-coded colours for wire end termination |
+
+### 16. Ferruling Machine Ribbon (1 product)
+**Category ID**: ferruling-machine-ribbon  
+
+| Product | Description |
+|---------|-------------|
+| Ribbon For Ferruling Machine | Hot stamping ribbon for ferruling machines |
+
+### 17. Busbar Support (1 product)
+**Category ID**: busbar-support  
+
+| Product | Description |
+|---------|-------------|
+| Finger Type Busbar Support | DMC/SMC finger type busbar supports for mounting in panel boards |
+
+### 18. MCB Channel (1 product)
+**Category ID**: mcb-channel  
+
+| Product | Description |
+|---------|-------------|
+| MCB Din Rail Channel | Standard TS35 DIN rail for mounting MCBs, terminal blocks, relays |
+
+### 19. Crimping Tools (1 product)
+**Category ID**: crimping-tools  
+
+| Product | Description |
+|---------|-------------|
+| Lugs Crimping Tools | Professional hydraulic and manual crimping tools for cable lug terminations |
+
+### 20. Panel Locks & Keys (1 product)
+**Category ID**: panel-locks-keys  
+
+| Product | Description |
+|---------|-------------|
+| DC Panel Locks & Keys | Cam lock and quarter-turn panel locks for electrical enclosures |
+
+### 21. Cable Ties (1 product)
+**Category ID**: cable-ties  
+
+| Product | Description |
+|---------|-------------|
+| Cable Wire Zip Ties | Nylon cable wire zip ties for cable bundling |
+
+### 22. Foil Tape (1 product)
+**Category ID**: foil-tape  
+
+| Product | Description |
+|---------|-------------|
+| Aluminium Foil Tape | Dead-soft aluminium foil tape for EMI/RFI shielding and HVAC duct sealing |
+
+### 23. Gasket (1 product)
+**Category ID**: gasket  
+
+| Product | Description |
+|---------|-------------|
+| U Shape Rubber Gasket | U-shaped rubber gaskets for edge protection and sealing in enclosures |
+
+### 24. Insulators (1 product)
+**Category ID**: insulators  
+
+| Product | Description |
+|---------|-------------|
+| Busbar Insulators | DMC and SMC busbar insulators for switchgear and distribution panels |
+
+### 25. Polyester Tape (1 product)
+**Category ID**: polyester-tape  
+
+| Product | Description |
+|---------|-------------|
+| Polyester Tapes | High-tensile polyester film tapes for transformers, motors, and coil wrapping |
+
+---
+
+## Key Statistics
+
+- **Years in business**: 19+ years (since 2005)
+- **Products in catalog**: 42+
+- **Product categories**: 22+
+- **Authorized brands**: 4+
+- **Customer base**: Panel builders, OEMs, and electrical contractors across India
+
+---
+
+## Frequently Asked Questions
+
+**Q: Where is Yashada Enterprises located?**  
+A: We are located at Shop No. 11 & 12, Shree Sai Industrial Estate, Ambad, Nashik, Maharashtra 422010, India.
+
+**Q: Do you supply outside Nashik?**  
+A: Yes, we supply industrial tapes and electrical components to customers across Maharashtra and India. Contact us for bulk orders and shipping details.
+
+**Q: Can I get a quote for bulk orders?**  
+A: Yes. Contact us via WhatsApp (+91 82089 97234), phone (0253-6602234), or the contact form on our website.
+
+**Q: Are you an authorized distributor?**  
+A: Yes. We are authorized distributors for Steelgrip, Abro, Woer, and Surelock brands.
+
+**Q: Do you manufacture any products?**  
+A: Yes. We manufacture self-adhesive tapes in-house, including surface protection tape, double-sided tape, foam gasket tape, anti-skid tape, security void tape, and PVC insulation tape.
