@@ -1,0 +1,70 @@
+.testimonials { padding: var(--space-section) 0; }
+.grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-md);
+}
+.card {
+  padding: 2rem; border-radius: var(--radius-xl);
+  border: 1px solid rgba(255,255,255,0.06);
+  background: linear-gradient(135deg, rgba(255,255,255,0.03) 0%, rgba(212,168,83,0.02) 100%);
+  transition: all 0.4s ease; position: relative;
+}
+.card:hover {
+  border-color: rgba(212,168,83,0.25);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.2), 0 0 20px rgba(212,168,83,0.05);
+}
+.quote {
+  font-size: 1rem; line-height: 1.7; color: var(--clr-text-muted);
+  margin-bottom: 1.5rem; font-style: italic; position: relative;
+  padding-left: 1.5rem;
+}
+.quote::before {
+  content: '"'; position: absolute; left: 0; top: -0.2rem;
+  font-size: 2.5rem; font-weight: 800; color: var(--clr-accent);
+  font-family: var(--font-heading); line-height: 1; opacity: 0.5;
+}
+.author {
+  display: flex; align-items: center; gap: 0.75rem;
+}
+.avatar {
+  width: 44px; height: 44px; border-radius: 50%;
+  background: rgba(212,168,83,0.1); display: flex; align-items: center; justify-content: center;
+  color: var(--clr-accent); font-family: var(--font-heading);
+  font-weight: 700; font-size: 1.1rem; flex-shrink: 0;
+}
+.name {
+  font-family: var(--font-heading); font-size: 0.95rem; font-weight: 600;
+  color: var(--clr-text-light);
+}
+.role {
+  font-size: 0.75rem; color: var(--clr-accent); letter-spacing: 0.06em;
+  text-transform: uppercase; font-weight: 500;
+}
+
+/* Client logos strip */
+.clientLogos {
+  display: flex; align-items: center; justify-content: center; gap: 3rem;
+  flex-wrap: wrap; margin-top: var(--space-lg);
+  padding: 2rem; border-radius: var(--radius-xl);
+  border: 1px solid rgba(255,255,255,0.06);
+  background: rgba(255,255,255,0.02);
+}
+.clientLogo {
+  font-family: var(--font-heading); font-weight: 700;
+  font-size: 1.1rem; color: var(--clr-text-muted);
+  letter-spacing: 0.05em; text-transform: uppercase;
+  opacity: 0.5; transition: all 0.3s ease;
+}
+.clientLogo:hover { opacity: 1; color: var(--clr-accent); }
+
+@media (max-width: 1024px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+  .clientLogos { gap: 2rem; }
+}
+
+@media (max-width: 768px) {
+  .grid { grid-template-columns: 1fr; }
+  .clientLogos { gap: 1.5rem; }
+  .clientLogo { font-size: 0.9rem; }
+}

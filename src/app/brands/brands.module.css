@@ -1,0 +1,5 @@
+.brandCardHover {
+  transition: all 0.3s ease;
+}
+.brandCardHover:hover { border-color: rgba(212,168,83,0.25) !important; }
+.brandCardHover:hover img { transform: scale(1.05); }

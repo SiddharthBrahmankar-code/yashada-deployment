@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { useState, useRef, useEffect } from 'react';
 import Fuse from 'fuse.js';
 import productsData from '@/data/products.json';
+import styles from './products.module.css';
 
 /* ── Custom Dropdown Component ─────────────────────────── */
 function FilterDropdown({ label, value, options, onChange }) {
@@ -20,16 +21,16 @@ function FilterDropdown({ label, value, options, onChange }) {
   const selectedLabel = options.find((o) => o.value === value)?.label || label;
 
   return (
-    <div className="filter-dropdown" ref={ref}>
+    <div className={styles.dropdown} ref={ref}>
       <button
-        className={`filter-dropdown__trigger ${open ? 'filter-dropdown__trigger--open' : ''}`}
+        className={`${styles.dropdownTrigger} ${open ? styles.dropdownTriggerOpen : ''}`}
         onClick={() => setOpen(!open)}
         type="button"
       >
-        <span className="filter-dropdown__label">{label}</span>
-        <span className="filter-dropdown__value">{selectedLabel}</span>
+        <span className={styles.dropdownLabel}>{label}</span>
+        <span className={styles.dropdownValue}>{selectedLabel}</span>
         <svg
-          className={`filter-dropdown__chevron ${open ? 'filter-dropdown__chevron--open' : ''}`}
+          className={`${styles.chevron} ${open ? styles.chevronOpen : ''}`}
           width="16" height="16" viewBox="0 0 24 24" fill="none"
           stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
         >
@@ -38,17 +39,17 @@ function FilterDropdown({ label, value, options, onChange }) {
       </button>
 
       {open && (
-        <div className="filter-dropdown__menu">
+        <div className={styles.dropdownMenu}>
           {options.map((opt) => (
             <button
               key={opt.value}
-              className={`filter-dropdown__option ${value === opt.value ? 'filter-dropdown__option--active' : ''}`}
+              className={`${styles.dropdownOption} ${value === opt.value ? styles.dropdownOptionActive : ''}`}
               onClick={() => { onChange(opt.value); setOpen(false); }}
               type="button"
             >
               {opt.label}
               {opt.count !== undefined && (
-                <span className="filter-dropdown__count">{opt.count}</span>
+                <span className={styles.dropdownCount}>{opt.count}</span>
               )}
             </button>
           ))}
@@ -172,9 +173,9 @@ export default function ProductsPage() {
       {/* ── Sleek Filter Bar ── */}
       <section className="section--dark" style={{ paddingTop: '0', paddingBottom: '0' }}>
         <div className="container">
-          <div className="products-filter-bar">
+          <div className={styles.filterBar}>
             {/* Search */}
-            <div className="products-filter-bar__search">
+            <div className={styles.search}>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--clr-text-muted)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <circle cx="11" cy="11" r="8" /><path d="M21 21l-4.35-4.35" />
               </svg>
@@ -183,12 +184,12 @@ export default function ProductsPage() {
                 placeholder="Search products..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="products-filter-bar__input"
+                className={styles.input}
               />
             </div>
 
             {/* Dropdowns */}
-            <div className="products-filter-bar__dropdowns">
+            <div className={styles.dropdowns}>
               <FilterDropdown
                 label="Category"
                 value={activeCategory}
@@ -204,13 +205,13 @@ export default function ProductsPage() {
             </div>
 
             {/* Result Count + Reset */}
-            <div className="products-filter-bar__meta">
-              <span className="products-filter-bar__count">
+            <div className={styles.meta}>
+              <span className={styles.count}>
                 {totalProducts} product{totalProducts !== 1 ? 's' : ''}
               </span>
               {(activeCategory !== 'all' || activeBrand !== 'all' || searchQuery) && (
                 <button
-                  className="products-filter-bar__reset"
+                  className={styles.reset}
                   onClick={() => { setActiveCategory('all'); setActiveBrand('all'); setSearchQuery(''); }}
                   type="button"
                 >
@@ -243,7 +244,7 @@ export default function ProductsPage() {
           >
             <div className="container">
               {/* Category Header with image */}
-              <div className="category-header-grid" style={{ marginBottom: '2rem' }}>
+              <div className={styles.categoryHeaderGrid} style={{ marginBottom: '2rem' }}>
                 <div>
                   <div className="label" style={{ marginBottom: '0.75rem' }}>
                     {category.brand || 'Yashada Enterprises'}
@@ -287,13 +288,13 @@ export default function ProductsPage() {
                   <Link
                     href={`/products/${product.id}`}
                     key={product.id}
-                    className="product-card"
+                    className={styles.productCard}
                     style={{
                       background: 'rgba(255,255,255,0.02)',
                       borderColor: 'rgba(255,255,255,0.06)',
                     }}
                   >
-                    <div className="product-card__image" style={{ position: 'relative' }}>
+                    <div className={styles.productImage} style={{ position: 'relative' }}>
                       {product.image ? (
                         <Image
                           src={product.image}
@@ -320,17 +321,17 @@ export default function ProductsPage() {
                         </div>
                       )}
                     </div>
-                    <div className="product-card__content">
-                      <div className="product-card__category">
+                    <div className={styles.productContent}>
+                      <div className={styles.productCategory}>
                         {product.specs?.Brand || category.name}
                       </div>
                       <h3
-                        className="product-card__name"
+                        className={styles.productName}
                         style={{ color: 'var(--clr-text-light)' }}
                       >
                         {product.name}
                       </h3>
-                      <p className="product-card__count" style={{ color: 'var(--clr-text-muted)' }}>
+                      <p className={styles.productCount} style={{ color: 'var(--clr-text-muted)' }}>
                         {product.description.substring(0, 80)}...
                       </p>
                     </div>
@@ -339,7 +340,7 @@ export default function ProductsPage() {
                       href={`https://wa.me/918208997234?text=${encodeURIComponent(`Hi, I'm interested in ${product.name} from your ${category.name} range. Please share details.`)}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="product-card__whatsapp"
+                      className={styles.whatsapp}
                       onClick={(e) => e.stopPropagation()}
                       aria-label={`Enquire about ${product.name} on WhatsApp`}
                     >

@@ -3,6 +3,7 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import styles from './Testimonials.module.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -88,7 +89,7 @@ export default function Testimonials() {
   }, []);
 
   return (
-    <section className="testimonials section--dark" ref={sectionRef}>
+    <section className={`${styles.testimonials} section--dark`} ref={sectionRef}>
       <div className="container">
         <div ref={headerRef} style={{ textAlign: 'center', marginBottom: 'var(--space-lg)' }}>
           <div className="label" style={{ marginBottom: '1rem' }}>
@@ -106,19 +107,19 @@ export default function Testimonials() {
           </p>
         </div>
 
-        <div className="testimonials__grid">
+        <div className={styles.grid}>
           {testimonials.map((t, i) => (
             <div
               key={t.name}
-              className="testimonial-card"
+              className={styles.card}
               ref={(el) => (cardsRef.current[i] = el)}
             >
-              <p className="testimonial-card__quote">{t.quote}</p>
-              <div className="testimonial-card__author">
-                <div className="testimonial-card__avatar">{t.initials}</div>
+              <p className={styles.quote}>{t.quote}</p>
+              <div className={styles.author}>
+                <div className={styles.avatar}>{t.initials}</div>
                 <div>
-                  <div className="testimonial-card__name">{t.name}</div>
-                  <div className="testimonial-card__role">{t.role}</div>
+                  <div className={styles.name}>{t.name}</div>
+                  <div className={styles.role}>{t.role}</div>
                 </div>
               </div>
             </div>
@@ -126,9 +127,9 @@ export default function Testimonials() {
         </div>
 
         {/* Client types strip */}
-        <div className="client-logos">
+        <div className={styles.clientLogos}>
           {clientTypes.map((type) => (
-            <span key={type} className="client-logo">
+            <span key={type} className={styles.clientLogo}>
               {type}
             </span>
           ))}

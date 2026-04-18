@@ -1,5 +1,7 @@
 'use client';
 
+import styles from './WhatsAppButton.module.css';
+
 export default function WhatsAppButton() {
   const whatsappUrl =
     'https://wa.me/918208997234?text=Hello%20Yashada%20Enterprises%2C%20I%20would%20like%20to%20inquire%20about%20your%20products.';
@@ -9,7 +11,7 @@ export default function WhatsAppButton() {
       href={whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className="whatsapp-btn"
+      className={styles.whatsappBtn}
       aria-label="Chat on WhatsApp"
     >
       <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

@@ -4,6 +4,7 @@ import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Image from 'next/image';
+import styles from './HeroExperience.module.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -18,30 +19,30 @@ export default function HeroExperience() {
       const tl = gsap.timeline({ delay: 0.2 });
 
       /* Title words — dramatic cascade */
-      tl.from(el.querySelectorAll('.hero__word'), {
+      tl.from(el.querySelectorAll(`.${styles.word}`), {
         y: 120, rotateX: -45, opacity: 0,
         duration: 1, ease: 'power4.out', stagger: 0.1,
       }, '-=0.15');
 
       /* Subtitle & location */
-      tl.from(el.querySelector('.hero__sub'), {
+      tl.from(el.querySelector(`.${styles.sub}`), {
         y: 30, opacity: 0, duration: 0.6, ease: 'power2.out',
       }, '-=0.4');
-      tl.from(el.querySelector('.hero__location'), {
+      tl.from(el.querySelector(`.${styles.location}`), {
         y: 20, opacity: 0, duration: 0.4, ease: 'power2.out',
       }, '-=0.3');
 
       /* Scroll cue */
-      tl.from(el.querySelector('.hero__scroll'), {
+      tl.from(el.querySelector(`.${styles.scroll}`), {
         opacity: 0, y: 10, duration: 0.3,
       }, '-=0.1');
 
       /* ── PARALLAX ON SCROLL ── */
-      gsap.to(el.querySelector('.hero__content'), {
+      gsap.to(el.querySelector(`.${styles.contentCentered}`), {
         y: 80, opacity: 0,
         scrollTrigger: { trigger: el, start: '40% center', end: 'bottom top', scrub: 1 },
       });
-      gsap.to(el.querySelector('.hero__bg-img'), {
+      gsap.to(el.querySelector(`.${styles.bgImg}`), {
         y: 50, scale: 1.08,
         scrollTrigger: { trigger: el, start: 'top top', end: 'bottom top', scrub: 1 },
       });
@@ -51,11 +52,11 @@ export default function HeroExperience() {
   }, []);
 
   return (
-    <section className="hero hero--centered" ref={heroRef}>
+    <section className={styles.hero} ref={heroRef}>
       {/* Background */}
-      <div className="hero__bg">
+      <div className={styles.bg}>
         <Image
-          className="hero__bg-img"
+          className={styles.bgImg}
           src="/images/hero/hero-bg.png"
           alt=""
           aria-hidden="true"
@@ -64,32 +65,32 @@ export default function HeroExperience() {
           priority
           style={{ objectFit: 'cover' }}
         />
-        <div className="hero__bg-overlay hero__bg-overlay--center" />
-        <div className="hero__bg-grid" />
+        <div className={styles.bgOverlayCenter} />
+        <div className={styles.bgGrid} />
       </div>
 
-      <div className="hero__content hero__content--centered">
-        <h1 className="hero__title hero__title--centered">
-          <span className="hero__word-wrap">
-            <span className="hero__word hero__word--accent">YASHADA</span>
+      <div className={styles.contentCentered}>
+        <h1 className={`${styles.title} ${styles.titleCentered}`}>
+          <span className={styles.wordWrap}>
+            <span className={`${styles.word} ${styles.wordAccent}`}>YASHADA</span>
           </span>
           <br />
-          <span className="hero__word-wrap">
-            <span className="hero__word">ENTERPRISES</span>
+          <span className={styles.wordWrap}>
+            <span className={styles.word}>ENTERPRISES</span>
           </span>
         </h1>
 
-        <p className="hero__sub hero__sub--centered">
+        <p className={`${styles.sub} ${styles.subCentered}`}>
           Converters &amp; Distributors of Electrical Insulation Materials,
           Adhesive Tapes &amp; Control Panel Accessories
         </p>
 
-        <div className="hero__location">
+        <div className={styles.location}>
           NASHIK, MAHARASHTRA — INDIA
         </div>
       </div>
 
-      <div className="hero__scroll">
+      <div className={styles.scroll}>
         <span>SCROLL</span>
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--clr-accent)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M6 9l6 6 6-6"/></svg>
       </div>

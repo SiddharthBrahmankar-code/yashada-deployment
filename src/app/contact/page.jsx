@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useCallback } from 'react';
+import styles from './contact.module.css';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -94,7 +95,7 @@ export default function ContactPage() {
   return (
     <>
       {/* Hero */}
-      <section className="section--dark contact-hero">
+      <section className={`section--dark ${styles.hero}`}>
         <div className="container">
           <div className="label" style={{ marginBottom: '1rem' }}>Get in Touch</div>
           <h1 className="ourstory__heading" style={{ marginBottom: '1rem' }}>
@@ -113,7 +114,7 @@ export default function ContactPage() {
       {/* Contact Section */}
       <section className="section--dark" style={{ padding: 'var(--space-section) 0' }}>
         <div className="container">
-          <div className="contact-grid">
+          <div className={styles.grid}>
             {/* Form */}
             <div>
               <h2
@@ -124,7 +125,7 @@ export default function ContactPage() {
               </h2>
 
               {submitted ? (
-                <div className="contact-success">
+                <div className={styles.success}>
                   <div style={{ marginBottom: '1rem' }}>
                     <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--clr-accent)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
@@ -251,7 +252,7 @@ export default function ContactPage() {
                     ),
                   },
                 ].map((item) => (
-                  <div key={item.label} className="contact-info-card">
+                  <div key={item.label} className={styles.infoCard}>
                     <div style={{ color: 'var(--clr-accent)', flexShrink: 0, marginTop: '2px' }}>{item.icon}</div>
                     <div>
                       <div

@@ -1,0 +1,133 @@
+/* Filter Bar */
+.filterBar {
+  display: flex; align-items: center; justify-content: space-between; gap: 1.5rem;
+  padding: 1.25rem 2rem; background: var(--clr-dark-surface);
+  border: 1px solid rgba(255,255,255,0.06); border-radius: var(--radius-lg);
+  margin-top: -1rem; position: relative; z-index: 50;
+}
+.search {
+  display: flex; align-items: center; gap: 0.75rem; flex: 1; min-width: 280px;
+  padding: 0.875rem 1.25rem; background: rgba(7,7,11,0.5);
+  border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md);
+  transition: border-color 0.3s;
+}
+.search:focus-within { border-color: var(--clr-accent); }
+.input {
+  width: 100%; background: none; border: none; color: var(--clr-text-light);
+  font-size: 0.95rem; outline: none;
+}
+.input::placeholder { color: var(--clr-text-muted); }
+.dropdowns { display: flex; gap: 1rem; }
+.meta { display: flex; align-items: center; gap: 1.5rem; white-space: nowrap; }
+.count { font-size: 0.9rem; color: var(--clr-text-muted); font-weight: 500; }
+.reset {
+  font-size: 0.85rem; color: var(--clr-text-muted); background: none; border: none;
+  cursor: pointer; transition: color 0.2s; display: flex; align-items: center; gap: 0.4rem;
+}
+.reset:hover { color: #f87171; }
+
+/* Filter Dropdown */
+.dropdown { position: relative; min-width: 200px; }
+.dropdownTrigger {
+  width: 100%; display: flex; align-items: center; justify-content: space-between;
+  padding: 0.875rem 1.25rem; background: rgba(7,7,11,0.5);
+  border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md);
+  cursor: pointer; transition: all 0.2s; color: var(--clr-text-light);
+  text-align: left;
+}
+.dropdownTrigger:hover { border-color: rgba(255,255,255,0.15); }
+.dropdownTriggerOpen {
+  border-color: var(--clr-accent); background: rgba(212,168,83,0.05);
+}
+.dropdownLabel {
+  font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;
+  color: var(--clr-text-muted); position: absolute; top: -8px; left: 12px;
+  background: var(--clr-dark-surface); padding: 0 4px; border-radius: 2px;
+}
+.dropdownValue {
+  font-size: 0.95rem; font-weight: 500; overflow: hidden;
+  text-overflow: ellipsis; white-space: nowrap; max-width: 140px;
+}
+.chevron { transition: transform 0.3s; color: var(--clr-text-muted); flex-shrink: 0; }
+.chevronOpen { transform: rotate(180deg); color: var(--clr-accent); }
+.dropdownMenu {
+  position: absolute; top: calc(100% + 4px); left: 0; right: 0; z-index: 60;
+  background: var(--clr-dark-surface); border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius-md); padding: 0.5rem;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+  max-height: 280px; overflow-y: auto; scrollbar-width: thin;
+}
+.dropdownOption {
+  width: 100%; display: flex; align-items: center; justify-content: space-between;
+  padding: 0.625rem 0.75rem; border: none; background: none; color: var(--clr-text-muted);
+  font-size: 0.9rem; cursor: pointer; border-radius: var(--radius-sm); transition: all 0.2s;
+  text-align: left;
+}
+.dropdownOption:hover { background: rgba(255,255,255,0.04); color: var(--clr-text-light); }
+.dropdownOptionActive { background: rgba(212,168,83,0.1); color: var(--clr-accent); }
+.dropdownCount {
+  font-size: 0.75rem; background: rgba(255,255,255,0.1); padding: 2px 6px;
+  border-radius: 10px; color: var(--clr-text-light);
+}
+
+/* Category Header Grid */
+.categoryHeaderGrid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem; align-items: center;
+}
+
+/* Product Card */
+.productCard {
+  background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06);
+  border-radius: var(--radius-lg); overflow: hidden; display: flex; flex-direction: column;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  text-decoration: none; position: relative;
+}
+.productCard:hover {
+  transform: translateY(-6px);
+  border-color: rgba(212,168,83,0.3);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.3), 0 0 20px rgba(212,168,83,0.05);
+}
+.productImage {
+  aspect-ratio: 4/3; position: relative; overflow: hidden;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.productImage img { transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1); }
+.productCard:hover .productImage img { transform: scale(1.08); }
+.productContent { padding: 1.5rem; flex: 1; display: flex; flex-direction: column; }
+.productCategory {
+  font-size: 0.75rem; color: var(--clr-accent); text-transform: uppercase;
+  letter-spacing: 0.08em; font-weight: 600; margin-bottom: 0.5rem;
+}
+.productName {
+  font-family: var(--font-heading); font-size: 1.2rem; font-weight: 700;
+  margin-bottom: 0.5rem; line-height: 1.3;
+}
+.productCount {
+  font-size: 0.875rem; line-height: 1.5; color: var(--clr-text-muted);
+}
+
+/* WhatsApp Icon */
+.whatsapp {
+  position: absolute; right: 1.5rem; top: 1.5rem;
+  width: 44px; height: 44px; background: #25D366; color: white;
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 12px rgba(37,211,102,0.3);
+  opacity: 0; transform: translateY(10px) scale(0.9); transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: 10;
+}
+.productCard:hover .whatsapp {
+  opacity: 1; transform: translateY(0) scale(1);
+}
+.whatsapp:hover { transform: scale(1.1) !important; background: #1ebd5a; }
+
+@media (max-width: 1024px) {
+  .filterBar { flex-wrap: wrap; }
+  .search { min-width: 200px; }
+}
+
+@media (max-width: 768px) {
+  .filterBar { flex-direction: column; align-items: stretch; }
+  .dropdowns { flex-direction: column; }
+  .meta { justify-content: space-between; }
+  .categoryHeaderGrid { grid-template-columns: 1fr; }
+}

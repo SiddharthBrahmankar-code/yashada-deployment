@@ -5,6 +5,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Image from 'next/image';
 import Link from 'next/link';
+import styles from './PinnedProducts.module.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -136,8 +137,8 @@ export default function ProductShowcase() {
       /* Each product item — stagger entrance */
       itemsRef.current.forEach((item) => {
         if (!item) return;
-        const media = item.querySelector('.product-showcase__media');
-        const info = item.querySelector('.product-showcase__info');
+        const media = item.querySelector(`.${styles.media}`);
+        const info = item.querySelector(`.${styles.info}`);
 
         gsap.from(media, {
           scrollTrigger: { trigger: item, start: 'top 85%', toggleActions: 'play none none none' },
@@ -155,20 +156,20 @@ export default function ProductShowcase() {
 
   return (
     <div ref={sectionRef}>
-      <section className="product-showcase section--dark">
+      <section className={`${styles.productShowcase} section--dark`}>
         <div className="container">
           <div className="label" style={{ marginBottom: '1rem' }}>What We Offer</div>
-          <h2 className="product-showcase__section-heading ourstory__heading" style={{ marginBottom: 'var(--space-xl)' }}>
+          <h2 className={styles.sectionHeading}>
             OUR <span className="accent">PRODUCT</span> RANGE
           </h2>
 
           {products.map((prod, i) => (
             <div
-              className="product-showcase__item"
+              className={styles.item}
               key={prod.heading}
               ref={(el) => (itemsRef.current[i] = el)}
             >
-              <div className="product-showcase__media" style={{ position: 'relative' }}>
+              <div className={styles.media}>
                 <Image
                   src={prod.image}
                   alt={prod.heading}
@@ -178,11 +179,11 @@ export default function ProductShowcase() {
                   style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                   loading="lazy"
                 />
-                <span className="product-showcase__badge">{prod.badge}</span>
+                <span className={styles.badge}>{prod.badge}</span>
               </div>
-              <div className="product-showcase__info">
-                <h3 className="product-showcase__heading">{prod.heading}</h3>
-                <p className="product-showcase__desc">{prod.desc}</p>
+              <div className={styles.info}>
+                <h3 className={styles.heading}>{prod.heading}</h3>
+                <p className={styles.desc}>{prod.desc}</p>
                 <ul className="amber-list">
                   {prod.items.map((item) => (
                     <li key={item}>{item}</li>
@@ -197,26 +198,26 @@ export default function ProductShowcase() {
       </section>
 
       {/* We Also Deal In */}
-      <section className="also-deal section--dark">
+      <section className={`${styles.alsoDeal} section--dark`}>
         <div className="container">
           <div className="label" style={{ marginBottom: '1rem' }}>And More</div>
-          <h2 className="also-deal__heading">
+          <h2 className={styles.alsoDealHeading}>
             WE ALSO <span className="accent">DEAL IN</span>
           </h2>
           <p style={{ color: 'var(--clr-text-muted)', maxWidth: '600px', marginBottom: 'var(--space-lg)', lineHeight: 1.7 }}>
             Beyond our core product lines, we supply a wide range of electrical and industrial components to meet every project need.
           </p>
-          <div className="also-deal__grid">
+          <div className={styles.alsoDealGrid}>
             {alsoDeals.map((item) => (
-              <Link href={`/products/${item.slug}`} className="also-deal__card" key={item.name}>
-                <span className="also-deal__icon" style={{ color: 'var(--clr-accent)' }}>
+              <Link href={`/products/${item.slug}`} className={styles.alsoDealCard} key={item.name}>
+                <span className={styles.alsoDealIcon}>
                   <DealIcon type={item.icon} />
                 </span>
                 <div>
-                  <div className="also-deal__name">{item.name}</div>
-                  <div className="also-deal__desc">{item.desc}</div>
+                  <div className={styles.alsoDealName}>{item.name}</div>
+                  <div className={styles.alsoDealDesc}>{item.desc}</div>
                 </div>
-                <span className="also-deal__arrow">→</span>
+                <span className={styles.alsoDealArrow}>→</span>
               </Link>
             ))}
           </div>

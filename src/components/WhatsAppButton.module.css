@@ -1,0 +1,18 @@
+.whatsappBtn {
+  position: fixed; bottom: 2rem; right: 2rem; z-index: 999;
+  width: 56px; height: 56px; border-radius: 50%; background: #25d366;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+  transition: all var(--duration-fast); animation: wa-pulse 2s infinite;
+}
+.whatsappBtn:hover { transform: scale(1.1); box-shadow: 0 6px 30px rgba(37,211,102,0.5); }
+.whatsappBtn svg { fill: #fff; width: 28px; height: 28px; }
+@keyframes wa-pulse { 0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,0.4); } 50% { box-shadow: 0 4px 30px rgba(37,211,102,0.6); } }
+
+@media (max-width: 768px) {
+  .whatsappBtn { bottom: 1.25rem; right: 1.25rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .whatsappBtn { animation: none !important; }
+}

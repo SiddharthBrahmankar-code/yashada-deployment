@@ -3,6 +3,7 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import styles from './WhatWeDo.module.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -18,19 +19,19 @@ export default function OurStory() {
         scrollTrigger: { trigger: section, start: 'top 80%', toggleActions: 'play none none none' },
         y: 30, opacity: 0, duration: 0.5, ease: 'power3.out',
       });
-      gsap.from(section.querySelector('.ourstory__heading'), {
+      gsap.from(section.querySelector(`.${styles.heading}`), {
         scrollTrigger: { trigger: section, start: 'top 78%', toggleActions: 'play none none none' },
         y: 50, opacity: 0, duration: 0.8, ease: 'power3.out',
       });
 
       /* Columns stagger */
-      gsap.from(section.querySelectorAll('.ourstory__columns p'), {
-        scrollTrigger: { trigger: section.querySelector('.ourstory__columns'), start: 'top 85%', toggleActions: 'play none none none' },
+      gsap.from(section.querySelectorAll(`.${styles.columns} p`), {
+        scrollTrigger: { trigger: section.querySelector(`.${styles.columns}`), start: 'top 85%', toggleActions: 'play none none none' },
         y: 40, opacity: 0, duration: 0.7, stagger: 0.15, ease: 'power3.out',
       });
 
       /* Stats container */
-      const statsBox = section.querySelector('.ourstory__stats');
+      const statsBox = section.querySelector(`.${styles.stats}`);
       if (statsBox) {
         gsap.from(statsBox, {
           scrollTrigger: { trigger: statsBox, start: 'top 90%', toggleActions: 'play none none none' },
@@ -43,18 +44,18 @@ export default function OurStory() {
   }, []);
 
   return (
-    <section className="ourstory section--dark" ref={sectionRef}>
+    <section className={`${styles.ourstory} section--dark`} ref={sectionRef}>
       <div className="container">
         <div className="label" style={{ marginBottom: '1rem' }}>Our Story</div>
 
-        <div className="ourstory__header">
-          <h2 className="ourstory__heading">
+        <div className={styles.header}>
+          <h2 className={styles.heading}>
             BUILT ON <span className="accent">QUALITY</span>,<br />
             DRIVEN BY <span className="accent">TRUST</span>
           </h2>
         </div>
 
-        <div className="ourstory__columns">
+        <div className={styles.columns}>
           <p>
             Incorporated in the year 2005, Yashada Enterprises has successfully 
             carved a reliable niche by manufacturing and trading a supreme quality 
@@ -70,16 +71,16 @@ export default function OurStory() {
         </div>
 
         {/* Stats row (moved from hero for cleaner layout) */}
-        <div className="ourstory__stats">
+        <div className={styles.stats}>
           {[
             ['40+', 'Products'],
             ['500+', 'Clients'],
             ['3', 'Brand Partners'],
             ['2005', 'Established'],
           ].map(([num, label]) => (
-            <div key={label} className="ourstory__stat">
-              <span className="ourstory__stat-num">{num}</span>
-              <span className="ourstory__stat-label">{label}</span>
+            <div key={label} className={styles.stat}>
+              <span className={styles.statNum}>{num}</span>
+              <span className={styles.statLabel}>{label}</span>
             </div>
           ))}
         </div>

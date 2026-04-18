@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import styles from './about.module.css';
 
 export const metadata = {
   title: 'About Us | Yashada Enterprises',
@@ -9,7 +10,7 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero */}
-      <section className="section--dark about-hero">
+      <section className={`section--dark ${styles.hero}`}>
         <div className="container">
           <div className="label" style={{ marginBottom: '1rem' }}>About Us</div>
           <h1 className="ourstory__heading" style={{ marginBottom: '1.5rem' }}>
@@ -27,9 +28,9 @@ export default function AboutPage() {
       </section>
 
       {/* Story Section */}
-      <section className="section--dark about-section">
+      <section className={`section--dark ${styles.section}`}>
         <div className="container">
-          <div className="about-story-grid">
+          <div className={styles.storyGrid}>
             <div>
               <div className="label" style={{ marginBottom: '1rem' }}>
                 Our Story
@@ -58,7 +59,7 @@ export default function AboutPage() {
               </div>
             </div>
 
-            <div className="about-image">
+            <div className={styles.image}>
               <img
                 src="/images/about/facility.png"
                 alt="Yashada Enterprises facility and workshop"
@@ -70,7 +71,7 @@ export default function AboutPage() {
       </section>
 
       {/* Values */}
-      <section className="section--dark about-section">
+      <section className={`section--dark ${styles.section}`}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
             <div className="label" style={{ marginBottom: '1rem' }}>Why Choose Us</div>
@@ -79,7 +80,7 @@ export default function AboutPage() {
             </h2>
           </div>
 
-          <div className="values-grid">
+          <div className={styles.valuesGrid}>
             {[
               {
                 icon: (
@@ -125,13 +126,13 @@ export default function AboutPage() {
             ].map((value) => (
               <div
                 key={value.title}
-                className="promise-card"
+                className={styles.promiseCard}
               >
-                <div className="promise-card__icon">{value.icon}</div>
-                <h3 className="promise-card__title">
+                <div className={styles.promiseIcon}>{value.icon}</div>
+                <h3 className={styles.promiseTitle}>
                   {value.title}
                 </h3>
-                <p className="promise-card__desc">
+                <p className={styles.promiseDesc}>
                   {value.desc}
                 </p>
               </div>
@@ -141,10 +142,10 @@ export default function AboutPage() {
       </section>
 
       {/* Team/Founder */}
-      <section className="section--dark about-section">
+      <section className={`section--dark ${styles.section}`}>
         <div className="container">
-          <div className="about-story-grid">
-            <div className="founder-card">
+          <div className={styles.storyGrid}>
+            <div className={styles.founderCard}>
               <div style={{ textAlign: 'center', padding: '2rem' }}>
                 <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1.5rem', opacity: 0.8 }}>
                   <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="var(--clr-accent)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -158,7 +159,7 @@ export default function AboutPage() {
                 <div style={{ color: 'var(--clr-accent)', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.1em', fontWeight: 600 }}>Founder & Proprietor</div>
               </div>
             </div>
-            <div className="founder-info">
+            <div className={styles.founderInfo}>
               <div className="label" style={{ marginBottom: '1rem' }}>
                 The Founder
               </div>
@@ -193,7 +194,7 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="section--dark about-section--center">
+      <section className={`section--dark ${styles.sectionCenter}`}>
         <div className="container">
           <h2 className="ourstory__heading" style={{ marginBottom: '1.5rem' }}>
             LET&apos;S <span className="accent">WORK TOGETHER</span>

@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useCallback } from 'react';
 import Link from 'next/link';
+import styles from './Header.module.css';
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -30,25 +31,25 @@ export default function Header() {
   }, []);
 
   return (
-    <header className={`header ${scrolled ? 'header--solid' : 'header--transparent'}`}>
-      <div className="header__inner">
-        <Link href="/" className="header__logo">
+    <header className={`${styles.header} ${scrolled ? styles.headerSolid : styles.headerTransparent}`}>
+      <div className={styles.inner}>
+        <Link href="/" className={styles.logo}>
           Yashada<span> Enterprises</span>
         </Link>
 
-        <nav className="header__nav">
+        <nav className={styles.nav}>
           <Link href="/products">Products</Link>
           <Link href="/brands">Brands</Link>
           <Link href="/about">About</Link>
           <Link href="/contact">Contact</Link>
         </nav>
 
-        <Link href="/contact" className="header__cta">
+        <Link href="/contact" className={styles.cta}>
           Send Inquiry
         </Link>
 
         <button
-          className="header__toggle"
+          className={styles.toggle}
           onClick={openMenu}
           aria-label="Toggle menu"
         >
@@ -61,11 +62,11 @@ export default function Header() {
       {/* Mobile Nav Overlay — animated */}
       {menuOpen && (
         <div
-          className={`mobile-nav ${menuClosing ? 'mobile-nav--closing' : ''}`}
+          className={`${styles.mobileNav} ${menuClosing ? styles.mobileNavClosing : ''}`}
           onClick={closeMenu}
         >
-          <nav className="mobile-nav__inner" onClick={(e) => e.stopPropagation()}>
-            <button className="mobile-nav__close" onClick={closeMenu} aria-label="Close menu">✕</button>
+          <nav className={styles.mobileNavInner} onClick={(e) => e.stopPropagation()}>
+            <button className={styles.mobileNavClose} onClick={closeMenu} aria-label="Close menu">✕</button>
             <Link href="/products" onClick={closeMenu}>Products</Link>
             <Link href="/brands" onClick={closeMenu}>Brands</Link>
             <Link href="/about" onClick={closeMenu}>About</Link>

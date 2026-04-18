@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { getBrands } from '@/lib/data';
+import styles from './brands.module.css';
 
 export const metadata = {
   title: 'Our Brands | Steelgrip, Abro, Woer | Yashada Enterprises',
@@ -55,7 +56,7 @@ export default async function BrandsPage() {
             {brands.map((brand) => (
               <div
                 key={brand.id}
-                className="brand-card-hover"
+                className={styles.brandCardHover}
                 style={{
                   border: '1px solid rgba(255,255,255,0.06)',
                   borderRadius: 'var(--radius-lg)',

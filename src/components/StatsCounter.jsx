@@ -3,6 +3,7 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import styles from './StatsCounter.module.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -20,7 +21,7 @@ export default function StatsCounter() {
   useEffect(() => {
     const ctx = gsap.context(() => {
       // Section fade in
-      gsap.from(sectionRef.current.querySelector('.stats__header'), {
+      gsap.from(sectionRef.current.querySelector('.label'), {
         scrollTrigger: {
           trigger: sectionRef.current,
           start: 'top 80%',
@@ -54,7 +55,7 @@ export default function StatsCounter() {
                 duration: 2,
                 ease: 'power2.out',
                 onUpdate: function () {
-                  const numSpan = counter.querySelector('.stats__number-val');
+                  const numSpan = counter.querySelector('span'); // First span is the value
                   if (numSpan) {
                     numSpan.textContent = Math.round(this.targets()[0].val);
                   }
@@ -70,9 +71,9 @@ export default function StatsCounter() {
   }, []);
 
   return (
-    <section className="stats section--dark" ref={sectionRef}>
+    <section className={`${styles.stats} section--dark`} ref={sectionRef}>
       <div className="container">
-        <div className="stats__header" style={{ textAlign: 'center', marginBottom: '4rem' }}>
+        <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
           <div className="label" style={{ marginBottom: '1rem' }}>
             Trusted Across India
           </div>
@@ -81,18 +82,18 @@ export default function StatsCounter() {
           </h2>
         </div>
 
-        <div className="stats__grid">
+        <div className={styles.grid}>
           {stats.map((stat, i) => (
             <div
-              className="stats__item"
+              className={styles.item}
               key={stat.label}
               ref={(el) => (countersRef.current[i] = el)}
             >
-              <div className="stats__number">
-                <span className="stats__number-val">0</span>
-                <span className="suffix">{stat.suffix}</span>
+              <div className={styles.number}>
+                <span>0</span>
+                <span>{stat.suffix}</span>
               </div>
-              <div className="stats__label">{stat.label}</div>
+              <div className={styles.label}>{stat.label}</div>
             </div>
           ))}
         </div>

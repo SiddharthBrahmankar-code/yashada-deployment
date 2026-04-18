@@ -1,0 +1,50 @@
+.hero {
+  padding: calc(var(--header-height) + 4rem) 0 4rem;
+  text-align: center; border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+.section { padding: var(--space-section) 0; }
+.sectionCenter { padding: var(--space-section) 0; text-align: center; }
+.storyGrid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
+  align-items: center;
+}
+.image {
+  border-radius: var(--radius-xl); overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.06); aspect-ratio: 4/3;
+}
+/* Values Grid */
+.valuesGrid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;
+}
+.promiseCard {
+  padding: 2rem; border-radius: var(--radius-lg);
+  background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05);
+  transition: all 0.3s ease; text-align: center;
+}
+.promiseCard:hover { border-color: rgba(212,168,83,0.3); transform: translateY(-4px); }
+.promiseIcon {
+  width: 64px; height: 64px; margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center;
+  border-radius: 50%; background: rgba(212,168,83,0.05); color: var(--clr-accent);
+}
+.promiseTitle {
+  font-family: var(--font-heading); font-size: 1.125rem; font-weight: 700;
+  margin-bottom: 0.75rem; color: var(--clr-text-light);
+}
+.promiseDesc {
+  font-size: 0.9rem; color: var(--clr-text-muted); line-height: 1.6;
+}
+/* Founder */
+.founderCard {
+  background: rgba(212,168,83,0.03); border: 1px solid rgba(212,168,83,0.15);
+  border-radius: var(--radius-xl); overflow: hidden; display: flex; align-items: center; justify-content: center;
+  aspect-ratio: 1;
+}
+.founderInfo { padding: 2rem 0; }
+
+@media (max-width: 1024px) {
+  .valuesGrid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+  .storyGrid { grid-template-columns: 1fr; }
+  .valuesGrid { grid-template-columns: 1fr; }
+}

@@ -6,6 +6,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Image from 'next/image';
 import Link from 'next/link';
 import brandsData from '@/data/brands.json';
+import styles from './BrandMarquee.module.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -36,7 +37,7 @@ export default function BrandMarquee() {
   const duplicatedBrands = [...brands, ...brands, ...brands, ...brands];
 
   return (
-    <section className="brand-marquee section--dark" ref={sectionRef}>
+    <section className={`${styles.brandMarquee} section--dark`} ref={sectionRef}>
       <div className="container" ref={headerRef}>
         <div className="label" style={{ textAlign: 'center', marginBottom: '1rem' }}>
           Authorized Distributor
@@ -52,11 +53,11 @@ export default function BrandMarquee() {
         </p>
       </div>
 
-      <div className="brand-marquee__fade" style={{ marginTop: '3rem' }}>
-        <div className="brand-marquee__track">
+      <div className={styles.fade} style={{ marginTop: '3rem' }}>
+        <div className={styles.track}>
           {duplicatedBrands.map((brand, i) => (
-            <Link href="/brands" className="brand-marquee__card" key={`${brand.id}-${i}`}>
-              <div className="brand-marquee__img-wrap">
+            <Link href="/brands" className={styles.card} key={`${brand.id}-${i}`}>
+              <div className={styles.imgWrap}>
                 {brand.image ? (
                   <Image
                     src={brand.image}
@@ -73,9 +74,9 @@ export default function BrandMarquee() {
                   </div>
                 )}
               </div>
-              <div className="brand-marquee__info">
-                <div className="brand-marquee__name">{brand.name}</div>
-                <div className="brand-marquee__tagline">{brand.tagline}</div>
+              <div className={styles.info}>
+                <div className={styles.name}>{brand.name}</div>
+                <div className={styles.tagline}>{brand.tagline}</div>
               </div>
             </Link>
           ))}

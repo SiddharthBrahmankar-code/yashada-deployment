@@ -1,0 +1,43 @@
+.ourstory { padding: var(--space-section) 0; position: relative; }
+.header { margin-bottom: var(--space-xl); }
+.heading {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 5vw, 3rem); font-weight: 800;
+  line-height: 1.1; letter-spacing: -0.02em;
+  color: var(--clr-text-light); text-transform: uppercase;
+}
+.columns {
+  display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-xl);
+  margin-bottom: var(--space-xl); border-top: 1px solid rgba(255,255,255,0.06);
+  padding-top: var(--space-xl);
+}
+.columns p {
+  font-size: var(--fs-body); line-height: 1.8; color: var(--clr-text-muted);
+}
+/* Optional Lovable-style stat boxes inside story */
+.stats {
+  display: flex; gap: var(--space-xl); align-items: center; justify-content: space-between;
+  padding: 1.5rem 2.5rem; background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.05); border-radius: var(--radius-lg);
+}
+.stat {
+  display: flex; flex-direction: column; gap: 0.5rem; text-align: center;
+}
+.statNum {
+  font-family: var(--font-heading); font-size: 2.5rem; font-weight: 700;
+  color: var(--clr-accent); line-height: 1;
+}
+.statLabel {
+  font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em;
+  color: var(--clr-text-muted); font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .columns { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+  .statNum { font-size: clamp(1.5rem, 8vw, 2.5rem); }
+  .stats { flex-wrap: wrap; gap: 0.75rem; padding: 1rem; }
+  .stat { flex: 1 1 40%; }
+}

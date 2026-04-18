@@ -1,12 +1,13 @@
 import Link from 'next/link';
+import styles from './Footer.module.css';
 
 export default function Footer() {
   return (
-    <footer className="footer section--dark">
+    <footer className={`${styles.footer} section--dark`}>
       <div className="container">
-        <div className="footer__grid">
-          <div className="footer__brand">
-            <div className="footer__brand-name">
+        <div className={styles.grid}>
+          <div className={styles.brand}>
+            <div className={styles.brandName}>
               Yashada<span> Enterprises</span>
             </div>
             <p>
@@ -20,8 +21,8 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="footer__col-title">Products</h4>
-            <div className="footer__links">
+            <h4 className={styles.colTitle}>Products</h4>
+            <div className={styles.links}>
               <Link href="/products#self-adhesive-tapes">Adhesive Tapes</Link>
               <Link href="/products#electrical-insulation-tapes">Insulation Tapes</Link>
               <Link href="/products#nylon-cable-ties">Cable Ties</Link>
@@ -32,8 +33,8 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="footer__col-title">Brands</h4>
-            <div className="footer__links">
+            <h4 className={styles.colTitle}>Brands</h4>
+            <div className={styles.links}>
               <Link href="/brands">Surelock</Link>
               <Link href="/brands">Woer</Link>
               <Link href="/brands">Premium</Link>
@@ -44,8 +45,8 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="footer__col-title">Contact</h4>
-            <div className="footer__links">
+            <h4 className={styles.colTitle}>Contact</h4>
+            <div className={styles.links}>
               <a href="tel:02536602234">0253-6602234</a>
               <a href="tel:8208997234">+91 82089 97234</a>
               <a href="mailto:yashadaenterprises@gmail.com">yashadaenterprises@gmail.com</a>
@@ -60,7 +61,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="footer__bottom">
+        <div className={styles.bottom}>
           <span>© {new Date().getFullYear()} Yashada Enterprises. All rights reserved.</span>
           <span>Nashik, Maharashtra, India</span>
         </div>

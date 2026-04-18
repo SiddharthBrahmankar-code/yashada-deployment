@@ -2,6 +2,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { getProductBySlug, getAllProductSlugs } from '@/lib/data';
+import styles from './productDetail.module.css';
+import cardStyles from '../products.module.css';
 
 export async function generateStaticParams() {
   const slugs = await getAllProductSlugs();
@@ -136,36 +138,36 @@ export default async function ProductDetailPage({ params }) {
         <div className="container">
           {/* Breadcrumbs */}
           <nav aria-label="Breadcrumb" style={{ marginBottom: '2rem' }}>
-            <ol className="breadcrumb">
-              <li className="breadcrumb__item">
-                <Link href="/" className="breadcrumb__link">Home</Link>
+            <ol className={styles.breadcrumb}>
+              <li className={styles.breadcrumbItem}>
+                <Link href="/" className={styles.breadcrumbLink}>Home</Link>
               </li>
-              <li className="breadcrumb__separator" aria-hidden="true">
+              <li className={styles.breadcrumbSeparator} aria-hidden="true">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 18l6-6-6-6"/></svg>
               </li>
-              <li className="breadcrumb__item">
-                <Link href="/products" className="breadcrumb__link">Products</Link>
+              <li className={styles.breadcrumbItem}>
+                <Link href="/products" className={styles.breadcrumbLink}>Products</Link>
               </li>
               {category && (
                 <>
-                  <li className="breadcrumb__separator" aria-hidden="true">
+                  <li className={styles.breadcrumbSeparator} aria-hidden="true">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 18l6-6-6-6"/></svg>
                   </li>
-                  <li className="breadcrumb__item">
-                    <Link href={`/products#${category.id}`} className="breadcrumb__link">{category.name}</Link>
+                  <li className={styles.breadcrumbItem}>
+                    <Link href={`/products#${category.id}`} className={styles.breadcrumbLink}>{category.name}</Link>
                   </li>
                 </>
               )}
-              <li className="breadcrumb__separator" aria-hidden="true">
+              <li className={styles.breadcrumbSeparator} aria-hidden="true">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 18l6-6-6-6"/></svg>
               </li>
-              <li className="breadcrumb__item breadcrumb__item--current" aria-current="page">
+              <li className={`${styles.breadcrumbItem} ${styles.breadcrumbCurrent}`} aria-current="page">
                 {product.name}
               </li>
             </ol>
           </nav>
 
-          <div className="product-detail-grid">
+          <div className={styles.grid}>
             {/* Product Image */}
             <div
               style={{
@@ -312,8 +314,8 @@ export default async function ProductDetailPage({ params }) {
                   .filter((p) => p.id !== product.id)
                   .slice(0, 4)
                   .map((related) => (
-                    <Link href={`/products/${related.id}`} key={related.id} className="product-card">
-                      <div className="product-card__image" style={{ position: 'relative' }}>
+                    <Link href={`/products/${related.id}`} key={related.id} className={cardStyles.productCard}>
+                      <div className={cardStyles.productImage} style={{ position: 'relative' }}>
                         {related.image ? (
                           <Image
                             src={related.image}
@@ -342,11 +344,11 @@ export default async function ProductDetailPage({ params }) {
                           </div>
                         )}
                       </div>
-                      <div className="product-card__content">
-                        <div className="product-card__category">
+                      <div className={cardStyles.productContent}>
+                        <div className={cardStyles.productCategory}>
                           {related.specs?.Brand || category.name}
                         </div>
-                        <h4 className="product-card__name">{related.name}</h4>
+                        <h4 className={cardStyles.productName}>{related.name}</h4>
                       </div>
                     </Link>
                   ))}
