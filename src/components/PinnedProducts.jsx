@@ -5,6 +5,8 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useInquiry } from '@/providers/InquiryProvider';
+import { useTranslation } from '@/providers/I18nProvider';
 import styles from './PinnedProducts.module.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -119,6 +121,8 @@ const alsoDeals = [
 ];
 
 export default function ProductShowcase() {
+  const { addItem, items } = useInquiry();
+  const { lang } = useTranslation();
   const sectionRef = useRef(null);
   const itemsRef = useRef([]);
 
@@ -184,7 +188,7 @@ export default function ProductShowcase() {
               <div className={styles.info}>
                 <h3 className={styles.heading}>{prod.heading}</h3>
                 <p className={styles.desc}>{prod.desc}</p>
-                <ul className="amber-list">
+                <ul className={`amber-list ${styles.itemList}`}>
                   {prod.items.map((item) => (
                     <li key={item}>{item}</li>
                   ))}
@@ -209,7 +213,8 @@ export default function ProductShowcase() {
           </p>
           <div className={styles.alsoDealGrid}>
             {alsoDeals.map((item) => (
-              <Link href={`/products/${item.slug}`} className={styles.alsoDealCard} key={item.name}>
+              <div className={styles.alsoDealCard} key={item.name}>
+                <Link href={`/${lang}/products/${item.slug}`} className={styles.absoluteLinkOverlay} aria-label={`View ${item.name}`} />
                 <span className={styles.alsoDealIcon}>
                   <DealIcon type={item.icon} />
                 </span>
@@ -218,7 +223,18 @@ export default function ProductShowcase() {
                   <div className={styles.alsoDealDesc}>{item.desc}</div>
                 </div>
                 <span className={styles.alsoDealArrow}>→</span>
-              </Link>
+                <button
+                  className={styles.inquiryBtnSmall}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    addItem({ id: item.slug, name: item.name });
+                  }}
+                  aria-label={`Add ${item.name} to Inquiry`}
+                >
+                  {items.some((i) => i.id === item.slug) ? '✓' : '+'}
+                </button>
+              </div>
             ))}
           </div>
         </div>

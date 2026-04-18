@@ -53,9 +53,9 @@ export default function CTASection() {
             </div>
             <div className={styles.title}>Visit Us</div>
             <div className={styles.detail}>
-              Plot No-28 B-14, Flatted Building<br />
-              MIDC Satpur<br />
-              Nashik — 422010
+              Shop No 11 and 12, Sai Industrial Estate<br />
+              Behind Ambad Substation, Near Patil Transport<br />
+              Ambad Gaon, Nashik — 422010
             </div>
           </div>
 

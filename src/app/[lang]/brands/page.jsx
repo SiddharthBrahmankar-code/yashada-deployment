@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { getBrands } from '@/lib/data';
+import { getDictionary } from '@/i18n/dictionaries';
 import styles from './brands.module.css';
 
 export const metadata = {
@@ -13,7 +14,9 @@ export const metadata = {
   }
 };
 
-export default async function BrandsPage() {
+export default async function BrandsPage({ params }) {
+  const { lang } = await params;
+  const t = await getDictionary(lang);
   const brands = await getBrands();
 
   return (
@@ -139,8 +142,8 @@ export default async function BrandsPage() {
             As authorized distributors, we offer genuine products at
             competitive prices with prompt delivery.
           </p>
-          <Link href="/contact" className="btn btn--gold" style={{ display: 'inline-flex' }}>
-            Send Inquiry
+          <Link href={`/${lang}/contact`} className="btn btn--gold" style={{ display: 'inline-flex' }}>
+            {t.cta?.inquiry || 'Send Inquiry'}
           </Link>
         </div>
       </section>

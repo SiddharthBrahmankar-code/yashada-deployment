@@ -4,7 +4,10 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useState, useRef, useEffect } from 'react';
 import Fuse from 'fuse.js';
+import { usePostHog } from 'posthog-js/react';
 import productsData from '@/data/products.json';
+import { useInquiry } from '@/providers/InquiryProvider';
+import { useTranslation } from '@/providers/I18nProvider';
 import styles from './products.module.css';
 
 /* ── Custom Dropdown Component ─────────────────────────── */
@@ -61,10 +64,27 @@ function FilterDropdown({ label, value, options, onChange }) {
 
 /* ── Products Page ─────────────────────────────────────── */
 export default function ProductsPage() {
+  const { addItem, items } = useInquiry();
   const categories = productsData.categories;
   const [activeCategory, setActiveCategory] = useState('all');
   const [activeBrand, setActiveBrand] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
+  const posthog = usePostHog();
+  const { t, lang } = useTranslation();
+
+  // Telemetry: Debounced Search Capture
+  useEffect(() => {
+    if (searchQuery.trim().length > 2) {
+      const timeoutId = setTimeout(() => {
+        posthog?.capture('Product_Search_Query', {
+          query: searchQuery.trim(),
+          activeCategory,
+          activeBrand,
+        });
+      }, 1500);
+      return () => clearTimeout(timeoutId);
+    }
+  }, [searchQuery, activeCategory, activeBrand, posthog]);
 
   // Extract all unique brands from product specs
   const allBrands = [...new Set(
@@ -229,9 +249,16 @@ export default function ProductsPage() {
           <div className="container">
             <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>🔍</div>
             <h3 className="heading-3" style={{ marginBottom: '0.5rem' }}>No products found</h3>
-            <p style={{ color: 'var(--clr-text-muted)' }}>
+            <p style={{ color: 'var(--clr-text-muted)', marginBottom: '1.5rem' }}>
               Try adjusting your filters or search query.
             </p>
+            <button
+              className="btn btn--glass"
+              onClick={() => { setActiveCategory('all'); setActiveBrand('all'); setSearchQuery(''); }}
+              type="button"
+            >
+              Clear all filters
+            </button>
           </div>
         </section>
       ) : (
@@ -285,8 +312,7 @@ export default function ProductsPage() {
                 }}
               >
                 {category.products.map((product) => (
-                  <Link
-                    href={`/products/${product.id}`}
+                  <div
                     key={product.id}
                     className={styles.productCard}
                     style={{
@@ -294,6 +320,7 @@ export default function ProductsPage() {
                       borderColor: 'rgba(255,255,255,0.06)',
                     }}
                   >
+                    <Link href={`/${lang}/products/${product.id}`} style={{ position: 'absolute', inset: 0, zIndex: 1 }} aria-label={`View ${product.name}`} />
                     <div className={styles.productImage} style={{ position: 'relative' }}>
                       {product.image ? (
                         <Image
@@ -348,7 +375,30 @@ export default function ProductsPage() {
                         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
                       </svg>
                     </a>
-                  </Link>
+                    
+                    {/* Add to Inquiry */}
+                    <button
+                      className={styles.inquiryBtn}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        addItem(product);
+                      }}
+                      aria-label={`Add ${product.name} to Inquiry`}
+                    >
+                      {items.some(i => i.id === product.id) ? (
+                        <>
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                          ADDED
+                        </>
+                      ) : (
+                        <>
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/><line x1="12" y1="11" x2="16" y2="11"/><line x1="14" y1="9" x2="14" y2="13"/></svg>
+                          ADD TO LIST
+                        </>
+                      )}
+                    </button>
+                  </div>
                 ))}
               </div>
             </div>
@@ -369,8 +419,8 @@ export default function ProductsPage() {
             industrial components beyond what&apos;s listed here.
           </p>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link href="/contact" className="btn btn--gold">
-              Send Inquiry
+            <Link href={`/${lang}/contact`} className="btn btn--gold">
+              {t.cta?.inquiry || 'Send Inquiry'}
             </Link>
             <a
               href="https://wa.me/918208997234?text=Hello%2C%20I%20need%20a%20product%20not%20listed%20on%20your%20website."
@@ -378,7 +428,7 @@ export default function ProductsPage() {
               rel="noopener noreferrer"
               className="btn btn--glass"
             >
-              WhatsApp Us
+              {t.cta?.whatsapp || 'WhatsApp Us'}
             </a>
           </div>
         </div>

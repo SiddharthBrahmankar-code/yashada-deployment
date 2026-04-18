@@ -1,5 +1,5 @@
 .hero {
-  position: relative; min-height: 100vh;
+  position: relative; min-height: 85vh;
   display: flex; align-items: center; justify-content: center;
   background: var(--clr-dark); overflow: hidden;
 }
@@ -100,7 +100,7 @@
 }
 
 @media (max-width: 480px) {
-  .title { font-size: clamp(2.5rem, 11vw, 3.5rem); }
+  .title { font-size: clamp(2rem, 10vw, 3rem); }
   .stats { border-radius: var(--radius-md); }
   .ctas { flex-direction: column; align-items: stretch; }
 }

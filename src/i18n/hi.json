@@ -1,0 +1,13 @@
+{
+  "nav": {
+    "products": "उत्पाद",
+    "brands": "ब्रांड",
+    "catalog": "कैटलॉग",
+    "about": "हमारे बारे में",
+    "contact": "संपर्क करें"
+  },
+  "cta": {
+    "inquiry": "पूछताछ भेजें",
+    "whatsapp": "हमसे WhatsApp करें"
+  }
+}

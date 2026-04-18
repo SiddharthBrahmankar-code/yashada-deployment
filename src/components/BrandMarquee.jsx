@@ -6,11 +6,13 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Image from 'next/image';
 import Link from 'next/link';
 import brandsData from '@/data/brands.json';
+import { useTranslation } from '@/providers/I18nProvider';
 import styles from './BrandMarquee.module.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function BrandMarquee() {
+  const { lang } = useTranslation();
   const sectionRef = useRef(null);
   const headerRef = useRef(null);
 
@@ -56,7 +58,7 @@ export default function BrandMarquee() {
       <div className={styles.fade} style={{ marginTop: '3rem' }}>
         <div className={styles.track}>
           {duplicatedBrands.map((brand, i) => (
-            <Link href="/brands" className={styles.card} key={`${brand.id}-${i}`}>
+            <Link href={`/${lang}/brands`} className={styles.card} key={`${brand.id}-${i}`}>
               <div className={styles.imgWrap}>
                 {brand.image ? (
                   <Image

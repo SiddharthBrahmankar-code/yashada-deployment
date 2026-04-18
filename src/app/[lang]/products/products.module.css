@@ -77,15 +77,18 @@
 
 /* Product Card */
 .productCard {
-  background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06);
+  background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05);
+  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
   border-radius: var(--radius-lg); overflow: hidden; display: flex; flex-direction: column;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
   text-decoration: none; position: relative;
+  box-shadow: inset 0 1px 1px rgba(255,255,255,0.03), 0 4px 20px rgba(0,0,0,0.2);
 }
 .productCard:hover {
-  transform: translateY(-6px);
+  transform: translateY(-8px) scale(1.01);
   border-color: rgba(212,168,83,0.3);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.3), 0 0 20px rgba(212,168,83,0.05);
+  background: rgba(255,255,255,0.04);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 40px rgba(212,168,83,0.12), inset 0 1px 1px rgba(255,255,255,0.1);
 }
 .productImage {
   aspect-ratio: 4/3; position: relative; overflow: hidden;
@@ -115,10 +118,21 @@
   opacity: 0; transform: translateY(10px) scale(0.9); transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   z-index: 10;
 }
-.productCard:hover .whatsapp {
+.inquiryBtn {
+  position: absolute; left: 1.5rem; top: 1.5rem;
+  background: rgba(7,7,11,0.8); border: 1px solid var(--clr-border-light); backdrop-filter: blur(8px);
+  color: var(--clr-text-light); padding: 0.5rem 1rem; border-radius: var(--radius-full);
+  font-family: var(--font-heading); font-size: 0.75rem; font-weight: 700;
+  display: flex; align-items: center; gap: 0.4rem; z-index: 10;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  opacity: 0; transform: translateY(10px) scale(0.9);
+}
+.productCard:hover .whatsapp, .productCard:hover .inquiryBtn {
   opacity: 1; transform: translateY(0) scale(1);
 }
 .whatsapp:hover { transform: scale(1.1) !important; background: #1ebd5a; }
+.inquiryBtn:hover { background: var(--clr-accent); color: var(--clr-dark); border-color: var(--clr-accent); transform: scale(1.05) !important; }
 
 @media (max-width: 1024px) {
   .filterBar { flex-wrap: wrap; }

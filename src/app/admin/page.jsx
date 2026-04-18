@@ -316,6 +316,12 @@ export default function AdminPage() {
         >
           🏷️ Brands ({brands.length})
         </button>
+        <button
+          style={activeTab === 'analytics' ? styles.tabActive : styles.tab}
+          onClick={() => setActiveTab('analytics')}
+        >
+          📊 Analytics
+        </button>
       </div>
 
       {/* Search Bar */}
@@ -503,6 +509,30 @@ export default function AdminPage() {
               );
             })()}
           </>
+        )}
+
+        {/* ─── Analytics Tab ─── */}
+        {activeTab === 'analytics' && (
+          <div style={styles.formCard}>
+            <h3 style={styles.formTitle}>Search Telemetry & Analytics</h3>
+            <p style={{ color: '#aaa', lineHeight: 1.6, marginBottom: '1.5rem', fontSize: '1.05rem' }}>
+              Advanced Search tracking is strictly enabled via PostHog. The system passively monitors the keywords, filters, and categories users query in real-time.
+            </p>
+            <div style={{ padding: '1rem', background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '8px', marginBottom: '1.5rem' }}>
+              <div style={{ color: '#d4a853', fontSize: '0.85rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.5rem' }}>Setup Required</div>
+              <p style={{ color: '#888', fontSize: '0.9rem', margin: 0, lineHeight: 1.5 }}>
+                Ensure your <code style={{ color: '#e5e5e5' }}>NEXT_PUBLIC_POSTHOG_KEY</code> is placed in your <code style={{ color: '#e5e5e5' }}>.env.local</code> file so production telemetry goes to your cloud account.
+              </p>
+            </div>
+            <a 
+              href="https://us.posthog.com/project/home" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              style={{ ...styles.btnGold, display: 'inline-block', textDecoration: 'none' }}
+            >
+              Open PostHog Dashboard
+            </a>
+          </div>
         )}
       </main>
 

@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import { usePathname } from 'next/navigation';
 import Lenis from 'lenis';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -10,6 +11,16 @@ gsap.registerPlugin(ScrollTrigger);
 export default function SmoothScroll({ children }) {
   const wrapperRef = useRef(null);
   const lenisRef = useRef(null);
+  const pathname = usePathname();
+
+  // Handle route transitions gracefully
+  useEffect(() => {
+    if (lenisRef.current) {
+      lenisRef.current.scrollTo(0, { immediate: true });
+    } else {
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    }
+  }, [pathname]);
 
   useEffect(() => {
     if (!wrapperRef.current) return;

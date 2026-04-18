@@ -1,0 +1,13 @@
+{
+  "nav": {
+    "products": "Products",
+    "brands": "Brands",
+    "catalog": "Catalog",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "cta": {
+    "inquiry": "Send Inquiry",
+    "whatsapp": "WhatsApp Us"
+  }
+}

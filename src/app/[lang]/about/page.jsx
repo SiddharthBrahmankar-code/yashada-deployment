@@ -1,12 +1,18 @@
 import Link from 'next/link';
+import { getDictionary } from '@/i18n/dictionaries';
 import styles from './about.module.css';
 
-export const metadata = {
-  title: 'About Us | Yashada Enterprises',
-  description: 'Learn about Yashada Enterprises — converters of self-adhesive tapes and distributors of industrial electrical components, based in Nashik since 2005.',
-};
+export async function generateMetadata({ params }) {
+  const { lang } = await params;
+  return {
+    title: 'About Us | Yashada Enterprises',
+    description: 'Learn about Yashada Enterprises — converters of self-adhesive tapes and distributors of industrial electrical components, based in Nashik since 2005.',
+  };
+}
 
-export default function AboutPage() {
+export default async function AboutPage({ params }) {
+  const { lang } = await params;
+  const t = await getDictionary(lang);
   return (
     <>
       {/* Hero */}
@@ -203,8 +209,8 @@ export default function AboutPage() {
             Whether you need a single roll of tape or a complete panel-building
             supply, we&apos;re here to help.
           </p>
-          <Link href="/contact" className="btn btn--gold" style={{ display: 'inline-flex' }}>
-            Get in Touch
+          <Link href={`/${lang}/contact`} className="btn btn--gold" style={{ display: 'inline-flex' }}>
+            {t.cta?.inquiry || 'Get in Touch'}
           </Link>
         </div>
       </section>

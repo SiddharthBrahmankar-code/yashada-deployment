@@ -225,7 +225,7 @@ export default function ContactPage() {
                 {[
                   {
                     label: 'Address',
-                    value: 'Plot No-28 B-14, Flatted Building, MIDC Satpur, Nashik - 422010',
+                    value: 'Shop No 11 and 12, Sai Industrial Estate, Behind Ambad Substation, Near Patil Transport, Ambad Gaon, Nashik - 422010',
                     icon: (
                       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
                     ),
@@ -299,7 +299,7 @@ export default function ContactPage() {
               {/* Map */}
               <div style={{ marginTop: '2rem', borderRadius: 'var(--radius-lg)', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.06)' }}>
                 <iframe
-                  src="https://maps.google.com/maps?q=Yashada%20Enterprises,%20MIDC%20Satpur,%20Nashik&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                  src="https://maps.google.com/maps?q=Shop%20No%2011%20and%2012,%20Sai%20Industrial%20Estate,%20Ambad%20Gaon,%20Nashik&t=&z=15&ie=UTF8&iwloc=&output=embed"
                   width="100%"
                   height="250"
                   style={{ border: 0, filter: 'invert(0.9) hue-rotate(180deg) brightness(0.8) contrast(1.2)' }}

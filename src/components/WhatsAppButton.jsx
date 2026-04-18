@@ -1,8 +1,14 @@
 'use client';
 
+import { usePathname } from 'next/navigation';
 import styles from './WhatsAppButton.module.css';
 
 export default function WhatsAppButton() {
+  const pathname = usePathname();
+  
+  if (pathname && pathname.startsWith('/admin')) {
+    return null;
+  }
   const whatsappUrl =
     'https://wa.me/918208997234?text=Hello%20Yashada%20Enterprises%2C%20I%20would%20like%20to%20inquire%20about%20your%20products.';
 

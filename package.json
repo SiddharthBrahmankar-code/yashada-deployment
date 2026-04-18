@@ -4,14 +4,17 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
+    "build": "npm run gen-pdf && next build",
+    "start": "next start",
+    "gen-pdf": "node scripts/generate-pdf.js"
   },
   "dependencies": {
     "fuse.js": "^7.3.0",
     "gsap": "^3.14.2",
     "lenis": "^1.3.17",
     "next": "16.1.6",
+    "pdfkit": "^0.18.0",
+    "posthog-js": "^1.369.3",
     "react": "19.2.3",
     "react-dom": "19.2.3"
   }
