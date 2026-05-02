@@ -59,9 +59,8 @@ export default function Footer() {
           <div>
             <h4 className={styles.colTitle}>Contact</h4>
             <div className={styles.links}>
-              <a href="tel:02536602234">0253-6602234</a>
               <a href="tel:8208997234">+91 82089 97234</a>
-              <a href="mailto:yashadaenterprises@gmail.com">yashadaenterprises@gmail.com</a>
+              <a href="mailto:dilip.brahmankar@yahoo.com">dilip.brahmankar@yahoo.com</a>
             </div>
             {/* Social Links */}
             <div style={{ display: 'flex', gap: '1rem', marginTop: '1.5rem' }}>

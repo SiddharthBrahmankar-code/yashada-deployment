@@ -66,7 +66,6 @@ export default function CTASection() {
             </div>
             <div className={styles.title}>Call Us</div>
             <div className={styles.detail}>
-              <a href="tel:02536602234">0253-6602234</a><br />
               <a href="tel:+918208997234">8208997234</a>
             </div>
           </div>
@@ -78,7 +77,7 @@ export default function CTASection() {
             </div>
             <div className={styles.title}>Email Us</div>
             <div className={styles.detail}>
-              <a href="mailto:yashadaenterprises@gmail.com">yashadaenterprises@gmail.com</a>
+              <a href="mailto:dilip.brahmankar@yahoo.com">dilip.brahmankar@yahoo.com</a>
             </div>
           </div>
         </div>

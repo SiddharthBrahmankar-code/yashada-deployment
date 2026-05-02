@@ -45,7 +45,7 @@ const jsonLd = {
   description: 'Converters of self-adhesive tapes and authorized distributors of industrial electrical components including cable ties, cable glands, panel accessories, and busbar systems.',
   url: 'https://yashada.netlify.app',
   telephone: '+918208997234',
-  email: 'yashadaenterprises@gmail.com',
+  email: 'dilip.brahmankar@yahoo.com',
   address: { '@type': 'PostalAddress', streetAddress: 'Shop No 11 and 12, Sai Industrial Estate, Behind Ambad Substation, Near Patil Transport, Ambad Gaon', addressLocality: 'Nashik', addressRegion: 'Maharashtra', postalCode: '422010', addressCountry: 'IN' },
   geo: { '@type': 'GeoCoordinates', latitude: 20.0063, longitude: 73.7903 },
   openingHoursSpecification: [{ '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'], opens: '10:00', closes: '19:00' }],

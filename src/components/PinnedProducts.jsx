@@ -17,7 +17,7 @@ const products = [
     badge: 'Manufacturer',
     desc: 'We manufacture and supply a comprehensive range of industrial adhesive and sealing tapes for electrical, packaging, and surface protection applications.',
     image: '/images/products/adhesive_tapes.png',
-    items: ['Surface Protection Tape', 'D Shape PU Foam Gasket', 'Anti Skid Tapes', 'Security Void Tape', 'Double Sided Tape', 'PVC Insulation Tape', 'Masking Tape (Abro)', 'Cross Filament Tape', 'HDPE Tarpaulin Tape', 'Aluminium Foil Tape', 'Polyester Tapes'],
+    items: [ 'PVC Insulation Tape','Masking Tape','Foam Gasket (self adhesive)','EPDM/Neoperene Foam Gasket','Fiber Glass Tape (self adhesive)','Floor Marking Tape','BOPP packaging tape','Polyester Tapes (for Transformers and coils)','Surface Protection Tape', 'D Shape PU Foam Gasket', 'Anti Skid Tapes', 'Security Void Tape', 'Double Sided Tape',  'Cross Filament Tape', 'HDPE Tarpaulin Tape', 'Aluminium Foil Tape'],
   },
   {
     heading: 'Cable Management',
@@ -31,7 +31,7 @@ const products = [
     badge: 'Panel Hardware',
     desc: 'Complete range of electrical panel building components — supports, channels, sleeves, locks, hinges, and insulation materials.',
     image: '/images/products/busbar_support.png',
-    items: ['Finger Type Busbar Support', 'Busbar Insulators', 'MCB Din Rail Channel', 'PVC Channels (Cable Duct)', 'DC Panel Locks & Keys', 'Spring Panel Hinges', 'Heat Shrinkable Sleeve (Woer)', 'Spiral Sleeve'],
+    items: ['Finger Type Busbar Support', 'Busbar Insulators', 'MCB Din Rail Channel', 'PVC Channels (Cable Duct)', 'DC Panel Locks & Keys', 'Heat Shrinkable Sleeve (Woer)', 'Spiral Sleeve'],
   },
 ];
 

@@ -1,20 +1,12 @@
 {
     "brands": [
         {
-            "id": "steelgrip",
-            "name": "Steelgrip",
+            "id": "technova",
+            "name": "Technova",
             "tagline": "PVC Insulation Tape",
             "description": "India's trusted PVC insulation tape brand for electrical wiring, harnessing, and colour coding.",
             "logo": "/images/brands/ai-steelgrip.png",
             "image": "/images/brands/ai-steelgrip.png"
-        },
-        {
-            "id": "abro",
-            "name": "Abro",
-            "tagline": "Paper Masking Tape",
-            "description": "Premium paper masking tape used in powder coating, carpentry, painting, and surface protection.",
-            "logo": "/images/brands/ai-abro.png",
-            "image": "/images/brands/ai-abro.png"
         },
         {
             "id": "woer",
@@ -23,6 +15,30 @@
             "description": "Premium heat-shrinkable tubing for electrical insulation, strain relief, and cable protection.",
             "logo": "/images/products/heat_shrink_sleeve.png",
             "image": "/images/products/heat_shrink_sleeve.png"
+        },
+        {
+            "id": "ener",
+            "name": "Ener",
+            "tagline": "PVC Insulation Tape",
+            "description": "India's trusted PVC insulation tape brand for electrical wiring, harnessing, and colour coding.",
+            "logo": "/images/brands/ai-steelgrip.png",
+            "image": "/images/brands/ai-steelgrip.png"
+        },
+        {
+            "id": "steelgrip",
+            "name": "Steelgrip",
+            "tagline": "PVC Insulation Tape",
+            "description": "India's trusted PVC insulation tape brand for electrical wiring, harnessing, and colour coding.",
+            "logo": "/images/brands/ai-steelgrip.png",
+            "image": "/images/brands/ai-steelgrip.png"
+        },
+        {
+            "id": "haria",
+            "name": "Haria",
+            "tagline": "Paper Masking Tape",
+            "description": "Premium paper masking tape used in powder coating, carpentry, painting, and surface protection.",
+            "logo": "/images/brands/ai-abro.png",
+            "image": "/images/brands/ai-abro.png"
         }
     ]
 }

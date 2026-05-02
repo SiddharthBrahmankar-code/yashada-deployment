@@ -6,7 +6,7 @@ import productsData from '@/data/products.json';
 import brandsData from '@/data/brands.json';
 
 // SHA-256 hash of the admin password — plaintext never appears in the bundle
-const ADMIN_PASSWORD_HASH = '78f105185c40af28c5ea64ae284b4187dcb0b346f5340cfb5c5248e0ae2a53a9';
+const ADMIN_PASSWORD_HASH = '441da12c0604929b02dc185df8e4fa61f55afa03f853ccb3b55a61ea9cfa175c';
 
 async function hashPassword(password) {
   const encoder = new TextEncoder();
