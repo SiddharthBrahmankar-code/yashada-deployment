@@ -83,11 +83,8 @@
 .wordWrap:last-child { margin-right: 0; }
 .word { display: inline-block; will-change: transform; }
 .wordAccent {
-  background: linear-gradient(135deg, #f0d882, var(--clr-accent), #c49230, #f0d882);
-  background-size: 300% 100%;
-  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 0 40px rgba(212,168,83,0.35));
-  animation: gradientShift 6s ease-in-out infinite;
+  color: #ffffff;
+  text-shadow: 0 0 30px rgba(255,255,255,0.4);
 }
 
 .sub {

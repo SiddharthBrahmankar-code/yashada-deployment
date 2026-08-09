@@ -28,15 +28,12 @@
 .logo {
   font-family: var(--font-heading); font-size: 1.4rem; font-weight: 800;
   letter-spacing: var(--ls-wide); text-transform: uppercase;
-  text-decoration: none;
-  background: linear-gradient(135deg, #ffffff 0%, #b8b8b8 100%);
-  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  text-decoration: none; color: #ffffff;
   transition: all 0.3s ease;
 }
-.logo:hover { filter: brightness(1.2); drop-shadow: 0 0 10px rgba(212,168,83,0.4); }
+.logo:hover { drop-shadow: 0 0 15px rgba(255,255,255,0.4); }
 .logo span { 
-  background: linear-gradient(135deg, #f0d882, var(--clr-accent), #c49230);
-  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  color: var(--clr-accent);
 }
 .nav { display: flex; align-items: center; gap: 2.5rem; }
 .nav a {
