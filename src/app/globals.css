@@ -13,7 +13,7 @@
   --clr-accent-deep: #b8872e;
   --clr-accent-glow: rgba(212,168,83,0.15);
   --clr-text-light: #eae6e0;
-  --clr-text-muted: #7a7682;
+  --clr-text-muted: #b0abb8;
   --clr-text-dark: #1a1a2e;
   --clr-border-dark: rgba(255,255,255,0.06);
   --clr-border-light: rgba(0,0,0,0.06);
@@ -303,7 +303,7 @@ ul, ol { list-style: none; }
 }
 .also-deal__card:hover .also-deal__name { color: var(--clr-accent); }
 .also-deal__desc {
-  font-size: 0.75rem; color: rgba(255,255,255,0.35); margin-top: 2px;
+  font-size: 0.75rem; color: rgba(255,255,255,0.75); margin-top: 2px;
   letter-spacing: 0.02em;
 }
 .also-deal__arrow {
