@@ -66,6 +66,23 @@ export default function HeroExperience() {
         y: -60,
         scrollTrigger: { trigger: el, start: 'top top', end: 'bottom top', scrub: 1 },
       });
+      /* ── MOUSE PARALLAX (Antigravity) ── */
+      const handleMouseMove = (e) => {
+        const x = (e.clientX / window.innerWidth - 0.5) * 15;
+        const y = (e.clientY / window.innerHeight - 0.5) * 15;
+        gsap.to(el.querySelector(`.${styles.contentCentered}`), {
+          rotateY: x,
+          rotateX: -y,
+          transformPerspective: 1200,
+          duration: 1,
+          ease: 'power2.out'
+        });
+      };
+      window.addEventListener('mousemove', handleMouseMove);
+
+      return () => {
+        window.removeEventListener('mousemove', handleMouseMove);
+      };
     }, el);
 
     return () => ctx.revert();

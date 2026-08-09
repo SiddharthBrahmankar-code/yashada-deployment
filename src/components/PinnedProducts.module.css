@@ -15,15 +15,16 @@
 .item:nth-child(even) .info { order: 0; }
 .media {
   position: relative; border-radius: var(--radius-xl); overflow: hidden;
-  border: 1px solid rgba(255,255,255,0.06); aspect-ratio: 4/3;
+  border: 1px solid var(--clr-glass-border); aspect-ratio: 4/3;
   background: var(--clr-dark-elevated);
   transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  transform-style: preserve-3d; perspective: 800px;
+  transform-style: preserve-3d; perspective: 1200px;
+  box-shadow: var(--shadow-weightless);
 }
 .media:hover {
-  border-color: rgba(212,168,83,0.2);
-  transform: perspective(800px) rotateY(-2deg) rotateX(1deg);
-  box-shadow: 20px 20px 60px rgba(0,0,0,0.4), -5px -5px 30px rgba(212,168,83,0.05);
+  border-color: var(--clr-glass-border-hover);
+  transform: translateY(-8px) rotateY(-3deg) rotateX(2deg);
+  box-shadow: var(--shadow-weightless-hover);
 }
 .media img {
   transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 0.6s ease;
@@ -88,12 +89,14 @@
 .alsoDealCard {
   display: flex; align-items: flex-start; gap: 1rem;
   padding: 1.5rem; border-radius: var(--radius-lg);
-  background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05);
-  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  background: var(--clr-glass-panel); border: 1px solid var(--clr-glass-border);
+  backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
   transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
   text-decoration: none; position: relative;
-  box-shadow: var(--shadow-card);
+  box-shadow: var(--shadow-weightless);
   overflow: hidden;
+  transform-style: preserve-3d;
+  perspective: 1200px;
 }
 /* Shimmer effect */
 .alsoDealCard::before {
@@ -103,9 +106,9 @@
 }
 .alsoDealCard:hover::before { left: 150%; }
 .alsoDealCard:hover {
-  transform: translateY(-6px) scale(1.01);
-  border-color: rgba(212,168,83,0.3); background: rgba(255,255,255,0.04);
-  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-6px) scale(1.01) rotateX(2deg) rotateY(-2deg);
+  border-color: var(--clr-glass-border-hover); background: var(--clr-glass-panel-hover);
+  box-shadow: var(--shadow-weightless-hover);
 }
 .alsoDealIcon {
   width: 40px; height: 40px; border-radius: 50%;

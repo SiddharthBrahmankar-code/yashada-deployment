@@ -66,6 +66,14 @@
   --radius-lg: 20px;
   --radius-xl: 28px;
   --radius-full: 9999px;
+
+  /* Antigravity Glass & 3D Variables */
+  --clr-glass-panel: rgba(255, 255, 255, 0.02);
+  --clr-glass-panel-hover: rgba(255, 255, 255, 0.05);
+  --clr-glass-border: rgba(255, 255, 255, 0.05);
+  --clr-glass-border-hover: rgba(212, 168, 83, 0.3);
+  --shadow-weightless: 0 20px 40px rgba(0, 0, 0, 0.15), inset 0 1px 1px rgba(255, 255, 255, 0.04);
+  --shadow-weightless-hover: 0 30px 60px rgba(0, 0, 0, 0.3), 0 0 30px rgba(212, 168, 83, 0.15), inset 0 1px 1px rgba(255, 255, 255, 0.1);
 }
 
 /* ==========================================================
@@ -139,6 +147,27 @@ ul, ol { list-style: none; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
+
+/* Antigravity 3D Utility Classes */
+.perspective-container {
+  perspective: 1200px;
+  transform-style: preserve-3d;
+}
+.glass-panel {
+  background: var(--clr-glass-panel);
+  border: 1px solid var(--clr-glass-border);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: var(--shadow-weightless);
+  border-radius: var(--radius-lg);
+  transition: all 0.5s var(--ease-smooth);
+}
+.glass-panel:hover {
+  background: var(--clr-glass-panel-hover);
+  border-color: var(--clr-glass-border-hover);
+  box-shadow: var(--shadow-weightless-hover);
+}
+
 
 /* ==========================================================
    4. LAYOUT

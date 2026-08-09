@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState, useCallback } from 'react';
+import { useEffect, useState, useCallback, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useTheme } from '@/providers/ThemeProvider';
@@ -13,16 +13,26 @@ export default function Header() {
   const { t, lang } = useTranslation();
   
   const [scrolled, setScrolled] = useState(false);
+  const [hidden, setHidden] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [menuClosing, setMenuClosing] = useState(false);
+  const lastScrollY = useRef(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      const currentScrollY = window.scrollY;
+      setScrolled(currentScrollY > 50);
+      
+      if (currentScrollY > lastScrollY.current && currentScrollY > 100 && !menuOpen) {
+        setHidden(true); // Scrolling down
+      } else {
+        setHidden(false); // Scrolling up
+      }
+      lastScrollY.current = currentScrollY;
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [menuOpen]);
 
   // Lock scroll when mobile menu is open
   useEffect(() => {
@@ -52,7 +62,7 @@ export default function Header() {
   }
 
   return (
-    <header className={`${styles.header} ${scrolled ? styles.headerSolid : styles.headerTransparent}`}>
+    <header className={`${styles.header} ${scrolled ? styles.headerSolid : styles.headerTransparent} ${hidden ? styles.headerHidden : ''}`}>
       <div className={styles.inner}>
         <Link href="/" className={styles.logo}>
           Yashada<span> Enterprises</span>
