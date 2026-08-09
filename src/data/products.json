@@ -1,6 +1,87 @@
 {
   "categories": [
     {
+      "id": "new-arrivals-placeholder",
+      "name": "New Arrivals (Placeholder)",
+      "tagline": "Latest additions to our catalog",
+      "description": "These are placeholder products featuring the newly generated AI images. Update these product names and details in products.json later.",
+      "image": "/images/products/ai_clean/product_1_studio_1786268374974.png",
+      "featured": true,
+      "products": [
+        {
+          "id": "placeholder-1",
+          "name": "Placeholder Product 1",
+          "description": "Product description placeholder for AI image 1.",
+          "image": "/images/products/ai_clean/product_1_studio_1786268374974.png"
+        },
+        {
+          "id": "placeholder-2",
+          "name": "Placeholder Product 2",
+          "description": "Product description placeholder for AI image 2.",
+          "image": "/images/products/ai_clean/product_2_studio_1786268403337.png"
+        },
+        {
+          "id": "placeholder-3",
+          "name": "Placeholder Product 3",
+          "description": "Product description placeholder for AI image 3.",
+          "image": "/images/products/ai_clean/product_3_studio_1786268416808.png"
+        },
+        {
+          "id": "placeholder-4",
+          "name": "Placeholder Product 4",
+          "description": "Product description placeholder for AI image 4.",
+          "image": "/images/products/ai_clean/product_4_studio_1786268435287.png"
+        },
+        {
+          "id": "placeholder-5",
+          "name": "Placeholder Product 5",
+          "description": "Product description placeholder for AI image 5.",
+          "image": "/images/products/ai_clean/product_5_studio_1786268448120.png"
+        },
+        {
+          "id": "placeholder-6",
+          "name": "Placeholder Product 6",
+          "description": "Product description placeholder for AI image 6.",
+          "image": "/images/products/ai_clean/product_6_studio_1786270574168.png"
+        },
+        {
+          "id": "placeholder-7",
+          "name": "Placeholder Product 7",
+          "description": "Product description placeholder for AI image 7.",
+          "image": "/images/products/ai_clean/product_7_studio_1786270589662.png"
+        },
+        {
+          "id": "placeholder-8",
+          "name": "Placeholder Product 8",
+          "description": "Product description placeholder for AI image 8.",
+          "image": "/images/products/ai_clean/product_8_studio_1786270605004.png"
+        },
+        {
+          "id": "placeholder-9",
+          "name": "Placeholder Product 9",
+          "description": "Product description placeholder for AI image 9.",
+          "image": "/images/products/ai_clean/product_9_studio_1786270621055.png"
+        },
+        {
+          "id": "placeholder-10",
+          "name": "Placeholder Product 10",
+          "description": "Product description placeholder for AI image 10.",
+          "image": "/images/products/ai_clean/product_10_studio_1786270643205.png"
+        },
+        {
+          "id": "placeholder-11",
+          "name": "Placeholder Product 11",
+          "description": "Product description placeholder for AI image 11.",
+          "image": "/images/products/ai_clean/product_11_studio_1786270661678.png"
+        },
+        {
+          "id": "placeholder-12",
+          "name": "Placeholder Product 12",
+          "description": "Product description placeholder for AI image 12.",
+          "image": "/images/products/ai_clean/product_12_studio_1786270678871.png"
+        }
+      ]
+    },
       "id": "adhesive-tape",
       "name": "Adhesive Tape",
       "tagline": "Industrial Adhesive Solutions",
