@@ -4,13 +4,6 @@
   background: var(--clr-dark); overflow: hidden;
 }
 .bg { position: absolute; inset: 0; z-index: 0; }
-.bgImg {
-  position: absolute; inset: 0;
-  width: 100%; height: 100%; object-fit: cover;
-  opacity: 0.7;
-  will-change: transform;
-  filter: saturate(1.1) brightness(1.1);
-}
 .bgOverlay {
   position: absolute; inset: 0;
   background: linear-gradient(
@@ -70,18 +63,6 @@
   animation: floatSlow 18s ease-in-out infinite 3s;
 }
 
-/* Scan line */
-.scanLine {
-  position: absolute; left: 0; right: 0; height: 1px; z-index: 3;
-  background: linear-gradient(90deg, transparent, rgba(212,168,83,0.15) 30%, rgba(212,168,83,0.3) 50%, rgba(212,168,83,0.15) 70%, transparent);
-  animation: scanDown 8s ease-in-out infinite;
-  pointer-events: none;
-}
-@keyframes scanDown {
-  0% { top: 0%; opacity: 0; }
-  10% { opacity: 1; }
-  90% { opacity: 1; }
-  100% { top: 100%; opacity: 0; }
 }
 
 .contentCentered {
@@ -177,7 +158,6 @@
 @media (prefers-reduced-motion: reduce) {
   .scroll svg { animation: none !important; }
   .orb { animation: none !important; }
-  .scanLine { animation: none !important; display: none; }
   .bgGrid { animation: none !important; }
   .wordAccent { animation: none !important; }
 }

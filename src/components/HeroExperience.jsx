@@ -92,16 +92,6 @@ export default function HeroExperience() {
     <section className={styles.hero} ref={heroRef}>
       {/* Background */}
       <div className={styles.bg}>
-        <Image
-          className={styles.bgImg}
-          src="/images/hero/hero-bg.png"
-          alt=""
-          aria-hidden="true"
-          fill
-          sizes="100vw"
-          priority
-          style={{ objectFit: 'cover' }}
-        />
         <div className={styles.bgOverlayCenter} />
         <div className={styles.bgGrid} />
         <div className={styles.bgVignette} />
@@ -111,9 +101,6 @@ export default function HeroExperience() {
       <div className={`${styles.orb} ${styles.orb1}`} />
       <div className={`${styles.orb} ${styles.orb2}`} />
       <div className={`${styles.orb} ${styles.orb3}`} />
-
-      {/* Scan line */}
-      <div className={styles.scanLine} />
 
       <div className={styles.contentCentered}>
         {/* Glass Badge */}
