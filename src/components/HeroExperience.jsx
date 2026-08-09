@@ -48,11 +48,6 @@ export default function HeroExperience() {
         opacity: 0, y: 10, duration: 0.4,
       }, '-=0.1');
 
-      /* Orbs — gentle entrance */
-      tl.from(el.querySelectorAll(`.${styles.orb}`), {
-        scale: 0, opacity: 0, duration: 1.2, stagger: 0.2, ease: 'power3.out',
-      }, '-=1.5');
-
       /* ── PARALLAX ON SCROLL ── */
       gsap.to(el.querySelector(`.${styles.contentCentered}`), {
         y: 100, opacity: 0,
@@ -60,10 +55,6 @@ export default function HeroExperience() {
       });
       gsap.to(el.querySelector(`.${styles.bgImg}`), {
         y: 80, scale: 1.12,
-        scrollTrigger: { trigger: el, start: 'top top', end: 'bottom top', scrub: 1 },
-      });
-      gsap.to(el.querySelectorAll(`.${styles.orb}`), {
-        y: -60,
         scrollTrigger: { trigger: el, start: 'top top', end: 'bottom top', scrub: 1 },
       });
       /* ── MOUSE PARALLAX (Antigravity) ── */
@@ -92,15 +83,20 @@ export default function HeroExperience() {
     <section className={styles.hero} ref={heroRef}>
       {/* Background */}
       <div className={styles.bg}>
+        <Image
+          className={styles.bgImg}
+          src="/images/hero/hero-bg.png"
+          alt=""
+          aria-hidden="true"
+          fill
+          sizes="100vw"
+          priority
+          style={{ objectFit: 'cover' }}
+        />
         <div className={styles.bgOverlayCenter} />
         <div className={styles.bgGrid} />
         <div className={styles.bgVignette} />
       </div>
-
-      {/* Floating Orbs */}
-      <div className={`${styles.orb} ${styles.orb1}`} />
-      <div className={`${styles.orb} ${styles.orb2}`} />
-      <div className={`${styles.orb} ${styles.orb3}`} />
 
       <div className={styles.contentCentered}>
         {/* Glass Badge */}

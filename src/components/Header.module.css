@@ -26,13 +26,18 @@
   display: flex; justify-content: space-between; align-items: center;
 }
 .logo {
-  font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700;
+  font-family: var(--font-heading); font-size: 1.4rem; font-weight: 800;
   letter-spacing: var(--ls-wide); text-transform: uppercase;
-  color: var(--clr-text-light); text-decoration: none;
-  transition: text-shadow 0.3s ease;
+  text-decoration: none;
+  background: linear-gradient(135deg, #ffffff 0%, #b8b8b8 100%);
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  transition: all 0.3s ease;
 }
-.logo:hover { text-shadow: 0 0 20px rgba(212,168,83,0.3); }
-.logo span { color: var(--clr-accent); }
+.logo:hover { filter: brightness(1.2); drop-shadow: 0 0 10px rgba(212,168,83,0.4); }
+.logo span { 
+  background: linear-gradient(135deg, #f0d882, var(--clr-accent), #c49230);
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+}
 .nav { display: flex; align-items: center; gap: 2.5rem; }
 .nav a {
   font-family: var(--font-heading); font-size: var(--fs-small); font-weight: 500;
