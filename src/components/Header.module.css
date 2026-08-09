@@ -2,13 +2,14 @@
   position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
   height: var(--header-height); display: flex; align-items: center;
   padding: 0 clamp(1.5rem, 4vw, 3rem);
-  transition: all var(--duration-fast) var(--ease-out-expo);
+  transition: all 0.4s var(--ease-out-expo);
 }
 .headerTransparent { background: none; }
 .headerSolid {
-  background: rgba(7,7,11,0.92);
-  backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+  background: rgba(7,7,11,0.85);
+  backdrop-filter: blur(32px) saturate(180%); -webkit-backdrop-filter: blur(32px) saturate(180%);
+  border-bottom: 1px solid rgba(212,168,83,0.06);
+  box-shadow: 0 4px 30px rgba(0,0,0,0.3);
 }
 .inner {
   width: 100%; max-width: var(--max-width); margin: 0 auto;
@@ -18,18 +19,23 @@
   font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700;
   letter-spacing: var(--ls-wide); text-transform: uppercase;
   color: var(--clr-text-light); text-decoration: none;
+  transition: text-shadow 0.3s ease;
 }
+.logo:hover { text-shadow: 0 0 20px rgba(212,168,83,0.3); }
 .logo span { color: var(--clr-accent); }
 .nav { display: flex; align-items: center; gap: 2.5rem; }
 .nav a {
   font-family: var(--font-heading); font-size: var(--fs-small); font-weight: 500;
   letter-spacing: 0.05em; text-transform: uppercase; color: var(--clr-text-muted);
   transition: color var(--duration-fast); position: relative; text-decoration: none;
+  padding: 0.25rem 0;
 }
 .nav a::after {
   content: ''; position: absolute; bottom: -4px; left: 0;
-  width: 0; height: 2px; background: var(--clr-accent); border-radius: 1px;
-  transition: width var(--duration-fast) var(--ease-out-expo);
+  width: 0; height: 2px; border-radius: 1px;
+  background: linear-gradient(90deg, var(--clr-accent), var(--clr-accent-soft));
+  transition: width 0.4s var(--ease-out-expo);
+  box-shadow: 0 0 8px rgba(212,168,83,0.3);
 }
 .nav a:hover { color: var(--clr-text-light); }
 .nav a:hover::after { width: 100%; }
@@ -43,21 +49,35 @@
   display: flex; align-items: center; justify-content: center;
   width: 40px; height: 40px; border-radius: 50%;
   color: var(--clr-text-light); cursor: pointer;
-  background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
   transition: all var(--duration-fast);
 }
 .themeToggle:hover {
-  background: rgba(255,255,255,0.1); color: var(--clr-accent);
+  background: rgba(212,168,83,0.1); color: var(--clr-accent);
+  border-color: rgba(212,168,83,0.2);
+  box-shadow: 0 0 15px rgba(212,168,83,0.1);
 }
 
 .cta {
   font-family: var(--font-heading); font-size: var(--fs-small); font-weight: 600;
   letter-spacing: var(--ls-wide); text-transform: uppercase;
-  padding: 0.625rem 1.5rem; border: 1px solid var(--clr-accent);
+  padding: 0.625rem 1.5rem; border: 1px solid rgba(212,168,83,0.4);
   color: var(--clr-accent); border-radius: var(--radius-full);
   transition: all var(--duration-fast); text-decoration: none;
+  position: relative; overflow: hidden;
+  background: rgba(212,168,83,0.05);
 }
-.cta:hover { background: var(--clr-accent); color: var(--clr-dark); }
+.cta::before {
+  content: ''; position: absolute; inset: -1px; border-radius: inherit;
+  background: linear-gradient(135deg, rgba(212,168,83,0.2), transparent 60%);
+  opacity: 0; transition: opacity 0.4s ease;
+}
+.cta:hover {
+  background: var(--clr-accent); color: var(--clr-dark);
+  box-shadow: 0 0 25px rgba(212,168,83,0.3);
+  border-color: var(--clr-accent);
+}
+.cta:hover::before { opacity: 1; }
 .toggle {
   display: none; cursor: pointer; flex-direction: column; gap: 5px; padding: 8px;
   background: none; border: none;
@@ -65,13 +85,14 @@
 .toggle span {
   display: block; width: 24px; height: 2px;
   background: var(--clr-text-light); border-radius: 1px;
+  transition: all 0.3s ease;
 }
 
 /* Mobile Nav Overlay */
 .mobileNav {
   position: fixed; inset: 0; z-index: 9999;
   background: rgba(7,7,11,0.97);
-  backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+  backdrop-filter: blur(32px) saturate(180%); -webkit-backdrop-filter: blur(32px) saturate(180%);
   animation: mobileNavIn 0.35s var(--ease-out-expo) forwards;
 }
 .mobileNavClosing {
@@ -93,7 +114,9 @@
   font-family: var(--font-heading); font-size: 1.5rem; font-weight: 600;
   letter-spacing: 0.1em; text-transform: uppercase; color: var(--clr-text-light);
   transition: color 0.3s; padding: 0.5rem 1rem; text-decoration: none;
+  position: relative;
 }
+.mobileNav a:hover { color: var(--clr-accent); }
 .mobileNavInner a {
   animation: mobileNavItemIn 0.4s var(--ease-out-expo) forwards;
   opacity: 0;

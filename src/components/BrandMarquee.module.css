@@ -1,4 +1,4 @@
-.brandMarquee { padding: var(--space-section) 0; overflow: hidden; }
+.brandMarquee { padding: var(--space-section) 0; overflow: hidden; position: relative; }
 .track { display: flex; width: max-content; animation: marquee 40s linear infinite; gap: 1.5rem; }
 .track:hover { animation-play-state: paused; }
 .card {
@@ -6,24 +6,32 @@
   border-radius: var(--radius-xl); overflow: hidden;
   border: 1px solid rgba(255,255,255,0.06);
   background: var(--clr-dark-surface);
-  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   cursor: pointer;
   text-decoration: none; color: inherit;
+  box-shadow: var(--shadow-card);
 }
 .card:hover {
-  border-color: rgba(212,168,83,0.3);
-  transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 16px 40px rgba(0,0,0,0.4), 0 0 30px rgba(212,168,83,0.06);
+  border-color: rgba(212,168,83,0.25);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: var(--shadow-card-hover);
 }
 .imgWrap {
   width: 100%; height: 160px; overflow: hidden;
   background: var(--clr-dark-elevated);
+  position: relative;
+}
+/* Gradient overlay on brand images */
+.imgWrap::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(14,14,22,0.5) 0%, transparent 50%);
+  pointer-events: none;
 }
 .imgWrap img {
-  transition: transform 0.6s ease;
+  transition: transform 0.7s ease;
 }
 .card:hover .imgWrap img {
-  transform: scale(1.08);
+  transform: scale(1.1);
 }
 .info {
   padding: 1rem 1.25rem;

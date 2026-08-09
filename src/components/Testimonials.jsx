@@ -14,6 +14,7 @@ const testimonials = [
     name: 'Rajesh Patil',
     role: 'Panel Builder, Nashik',
     initials: 'RP',
+    rating: 5,
   },
   {
     quote:
@@ -21,6 +22,7 @@ const testimonials = [
     name: 'Suresh Kale',
     role: 'Electrical Contractor',
     initials: 'SK',
+    rating: 5,
   },
   {
     quote:
@@ -28,6 +30,7 @@ const testimonials = [
     name: 'Manoj Deshmukh',
     role: 'OEM Manufacturer',
     initials: 'MD',
+    rating: 5,
   },
   {
     quote:
@@ -35,6 +38,7 @@ const testimonials = [
     name: 'Amit Sharma',
     role: 'Distributor, Pune',
     initials: 'AS',
+    rating: 5,
   },
 ];
 
@@ -76,10 +80,11 @@ export default function Testimonials() {
             start: 'top 88%',
             toggleActions: 'play none none none',
           },
-          y: 40,
+          y: 50,
           opacity: 0,
-          duration: 0.6,
-          delay: i * 0.1,
+          scale: 0.96,
+          duration: 0.7,
+          delay: i * 0.12,
           ease: 'power3.out',
         });
       });
@@ -114,6 +119,18 @@ export default function Testimonials() {
               className={styles.card}
               ref={(el) => (cardsRef.current[i] = el)}
             >
+              {/* Quote icon */}
+              <svg className={styles.quoteIcon} width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+              </svg>
+
+              {/* Star rating */}
+              <div className={styles.stars}>
+                {[...Array(t.rating)].map((_, j) => (
+                  <span key={j} className={styles.star}>★</span>
+                ))}
+              </div>
+
               <p className={styles.quote}>{t.quote}</p>
               <div className={styles.author}>
                 <div className={styles.avatar}>{t.initials}</div>

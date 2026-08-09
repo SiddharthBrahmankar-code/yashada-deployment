@@ -7,6 +7,36 @@ import styles from './WhatWeDo.module.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
+const features = [
+  {
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
+      </svg>
+    ),
+    title: 'Manufacturing Hub',
+    desc: 'In-house tape conversion facility producing precision self-adhesive tapes for electrical, packaging, and industrial applications.',
+  },
+  {
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
+      </svg>
+    ),
+    title: 'Distribution Network',
+    desc: 'Authorized distributors for 8+ leading brands — ensuring genuine products and the best wholesale rates across Maharashtra.',
+  },
+  {
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/>
+      </svg>
+    ),
+    title: 'Technical Expertise',
+    desc: '18+ years of hands-on experience — we help panel builders and contractors choose the exact right product for every application.',
+  },
+];
+
 export default function OurStory() {
   const sectionRef = useRef(null);
 
@@ -24,13 +54,22 @@ export default function OurStory() {
         y: 50, opacity: 0, duration: 0.8, ease: 'power3.out',
       });
 
-      /* Columns stagger */
+      /* Story columns */
       gsap.from(section.querySelectorAll(`.${styles.columns} p`), {
         scrollTrigger: { trigger: section.querySelector(`.${styles.columns}`), start: 'top 85%', toggleActions: 'play none none none' },
         y: 40, opacity: 0, duration: 0.7, stagger: 0.15, ease: 'power3.out',
       });
 
-      /* Stats container */
+      /* Feature cards — staggered entrance */
+      section.querySelectorAll(`.${styles.featureCard}`).forEach((card, i) => {
+        gsap.from(card, {
+          scrollTrigger: { trigger: card, start: 'top 90%', toggleActions: 'play none none none' },
+          y: 60, opacity: 0, scale: 0.95,
+          duration: 0.7, delay: i * 0.12, ease: 'power3.out',
+        });
+      });
+
+      /* Stats — counter reveal */
       const statsBox = section.querySelector(`.${styles.stats}`);
       if (statsBox) {
         gsap.from(statsBox, {
@@ -70,7 +109,19 @@ export default function OurStory() {
           </p>
         </div>
 
-        {/* Stats row (moved from hero for cleaner layout) */}
+        {/* Bento Feature Cards */}
+        <div className={styles.bentoGrid}>
+          {features.map((f) => (
+            <div key={f.title} className={styles.featureCard}>
+              <div className={styles.featureIcon}>{f.icon}</div>
+              <h3 className={styles.featureTitle}>{f.title}</h3>
+              <p className={styles.featureDesc}>{f.desc}</p>
+              <div className={styles.featureGlow} />
+            </div>
+          ))}
+        </div>
+
+        {/* Stats row */}
         <div className={styles.stats}>
           {[
             ['40+', 'Products'],

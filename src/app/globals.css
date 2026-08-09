@@ -9,6 +9,8 @@
   --clr-light-warm: #f0ece5;
   --clr-accent: #d4a853;
   --clr-accent-hover: #e6bd6a;
+  --clr-accent-soft: #f0d882;
+  --clr-accent-deep: #b8872e;
   --clr-accent-glow: rgba(212,168,83,0.15);
   --clr-text-light: #eae6e0;
   --clr-text-muted: #7a7682;
@@ -16,13 +18,22 @@
   --clr-border-dark: rgba(255,255,255,0.06);
   --clr-border-light: rgba(0,0,0,0.06);
   --clr-glass: rgba(255,255,255,0.04);
+  --clr-glass-strong: rgba(255,255,255,0.08);
   --clr-glass-border: rgba(255,255,255,0.08);
+  --clr-glass-border-strong: rgba(255,255,255,0.15);
   --clr-gradient-cta: linear-gradient(135deg, #1a1a2e 0%, #0a0a0f 50%, #1a1520 100%);
+  --gradient-radial-gold: radial-gradient(ellipse 60% 40% at 50% 50%, rgba(212,168,83,0.08) 0%, transparent 70%);
+  --gradient-mesh: linear-gradient(135deg, rgba(212,168,83,0.04) 0%, transparent 25%, rgba(122,118,130,0.03) 50%, transparent 75%, rgba(212,168,83,0.04) 100%);
+
+  --shadow-glow: 0 0 40px rgba(212,168,83,0.12);
+  --shadow-glow-strong: 0 0 60px rgba(212,168,83,0.2);
+  --shadow-card: 0 4px 20px rgba(0,0,0,0.25), inset 0 1px 1px rgba(255,255,255,0.04);
+  --shadow-card-hover: 0 20px 50px rgba(0,0,0,0.4), 0 0 30px rgba(212,168,83,0.08), inset 0 1px 1px rgba(255,255,255,0.08);
 
   --font-heading: 'Outfit', sans-serif;
   --font-body: 'Inter', sans-serif;
 
-  --fs-hero: clamp(2.5rem, 6vw, 4.5rem);
+  --fs-hero: clamp(3rem, 7vw, 5.5rem);
   --fs-h1: clamp(2rem, 4vw, 3.25rem);
   --fs-h2: clamp(1.75rem, 3vw, 2.5rem);
   --fs-h3: clamp(1.25rem, 2vw, 1.75rem);
@@ -32,20 +43,21 @@
 
   --lh-heading: 1.05;
   --lh-body: 1.7;
-  --ls-tight: -0.02em;
-  --ls-wide: 0.1em;
+  --ls-tight: -0.03em;
+  --ls-wide: 0.12em;
 
   --space-xs: 0.5rem;
   --space-sm: 1rem;
   --space-md: 1.5rem;
   --space-lg: 3rem;
   --space-xl: 4rem;
-  --space-section: clamp(4rem, 8vh, 6rem);
+  --space-section: clamp(5rem, 10vh, 8rem);
 
   --max-width: 1280px;
   --header-height: 80px;
 
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-smooth: cubic-bezier(0.25, 0.46, 0.45, 0.94);
   --duration-fast: 0.3s;
   --duration-normal: 0.6s;
 
@@ -60,7 +72,7 @@
    2. RESET & BASE
    ========================================================== */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; scroll-behavior: smooth; }
 body {
   font-family: var(--font-body);
   font-size: var(--fs-body);
@@ -72,7 +84,7 @@ body {
 /* Noise grain overlay */
 body::after {
   content: ''; position: fixed; inset: 0; z-index: 9999;
-  pointer-events: none; opacity: 0.035;
+  pointer-events: none; opacity: 0.03;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   background-size: 256px 256px;
 }
@@ -96,6 +108,37 @@ ul, ol { list-style: none; }
 .heading-3    { font-family: var(--font-heading); font-size: var(--fs-h3); font-weight: 600; line-height: 1.3; }
 .label        { font-family: var(--font-heading); font-size: var(--fs-label); letter-spacing: var(--ls-wide); text-transform: uppercase; color: var(--clr-accent); font-weight: 600; }
 .text-muted   { color: var(--clr-text-muted); }
+.accent       { color: var(--clr-accent); }
+
+/* Shimmer animation utility */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-12px) rotate(1deg); }
+  66% { transform: translateY(6px) rotate(-1deg); }
+}
+@keyframes floatSlow {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(10px, -20px) scale(1.02); }
+  50% { transform: translate(-5px, -10px) scale(0.98); }
+  75% { transform: translate(15px, 5px) scale(1.01); }
+}
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
 
 /* ==========================================================
    4. LAYOUT
@@ -149,7 +192,8 @@ ul, ol { list-style: none; }
 .btn--lg            { padding: 1.125rem 2.5rem; font-size: 0.9375rem; }
 
 /* ==========================================================
-}
+   6. PRODUCT SHOWCASE (legacy — used by globals only)
+   ========================================================== */
 .product-showcase__media:hover img { transform: scale(1.05); }
 .product-showcase__badge {
   position: absolute; bottom: 1rem; left: 1rem;
@@ -331,22 +375,30 @@ ul, ol { list-style: none; }
   letter-spacing: 0.1em; text-transform: uppercase;
   color: var(--clr-text-muted); margin-bottom: 0.5rem;
   font-family: var(--font-heading);
+  transition: color 0.3s ease;
 }
 .form-input {
-  width: 100%; padding: 0.875rem 1rem;
-  border: 1px solid rgba(255,255,255,0.15); border-radius: var(--radius-md);
+  width: 100%; padding: 0.95rem 1.25rem;
+  border: 1px solid rgba(255,255,255,0.1); border-radius: var(--radius-md);
   font-size: 1rem; font-family: var(--font-body);
-  transition: border-color 0.3s, background 0.3s, box-shadow 0.3s;
-  outline: none; background: rgba(255,255,255,0.08);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  outline: none; background: rgba(255,255,255,0.04);
   color: var(--clr-text-light); resize: vertical;
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+}
+.form-input:hover {
+  border-color: rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.06);
 }
 .form-input:focus {
-  border-color: var(--clr-accent);
-  background: rgba(212,168,83,0.04);
+  border-color: rgba(212,168,83,0.5);
+  background: rgba(212,168,83,0.03);
+  box-shadow: 0 0 0 3px rgba(212,168,83,0.08), 0 0 20px rgba(212,168,83,0.05);
 }
 .form-input--error {
   border-color: #ef4444 !important;
-  background: rgba(239, 68, 68, 0.05) !important;
+  background: rgba(239, 68, 68, 0.04) !important;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.08) !important;
 }
 .form-error {
   color: #ef4444; font-size: 0.875rem; margin-top: 0.5rem;

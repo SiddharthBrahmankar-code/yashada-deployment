@@ -116,7 +116,7 @@ export default function ContactPage() {
         <div className="container">
           <div className={styles.grid}>
             {/* Form */}
-            <div>
+            <div className={styles.formContainer}>
               <h2
                 className="ourstory__heading"
                 style={{ fontSize: 'var(--fs-h3)', marginBottom: '2rem' }}
@@ -297,7 +297,7 @@ export default function ContactPage() {
               </div>
 
               {/* Map */}
-              <div style={{ marginTop: '2rem', borderRadius: 'var(--radius-lg)', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.06)' }}>
+              <div className={styles.mapWrap}>
                 <iframe
                   src="https://maps.google.com/maps?q=Shop%20No%2011%20and%2012,%20Sai%20Industrial%20Estate,%20Ambad%20Gaon,%20Nashik&t=&z=15&ie=UTF8&iwloc=&output=embed"
                   width="100%"

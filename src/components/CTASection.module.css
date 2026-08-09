@@ -1,7 +1,32 @@
 .section {
-  padding: 8rem 0; position: relative; background: var(--clr-dark);
-  text-align: center; border-top: 1px solid rgba(255,255,255,0.04);
+  padding: 8rem 0; position: relative;
+  background: var(--clr-dark);
+  text-align: center;
+  overflow: hidden;
 }
+
+/* Animated mesh background */
+.meshBg {
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(212,168,83,0.03) 0%, transparent 30%, rgba(100,80,200,0.02) 60%, transparent 100%);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease-in-out infinite;
+}
+.meshOrb1 {
+  position: absolute; top: 10%; right: -10%;
+  width: 400px; height: 400px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(212,168,83,0.06) 0%, transparent 70%);
+  filter: blur(60px); pointer-events: none;
+  animation: floatSlow 20s ease-in-out infinite;
+}
+.meshOrb2 {
+  position: absolute; bottom: 0; left: -10%;
+  width: 350px; height: 350px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(100,80,200,0.04) 0%, transparent 70%);
+  filter: blur(60px); pointer-events: none;
+  animation: floatSlow 25s ease-in-out infinite reverse;
+}
+
 .heading {
   font-family: var(--font-heading); font-size: clamp(2rem, 5vw, 3rem); font-weight: 800;
   line-height: 1.1; letter-spacing: -0.02em; color: var(--clr-text-light); text-transform: uppercase;
@@ -11,26 +36,49 @@
   display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-lg);
 }
 .card {
-  padding: var(--space-xl) var(--space-lg); border-radius: var(--radius-lg);
-  background: var(--clr-dark-surface); border: 1px solid rgba(255,255,255,0.06);
-  transition: all 0.4s ease; display: flex; flex-direction: column; align-items: center;
+  padding: var(--space-xl) var(--space-lg); border-radius: var(--radius-xl);
+  background: linear-gradient(145deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.06);
+  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  display: flex; flex-direction: column; align-items: center;
+  text-decoration: none; color: inherit; cursor: pointer;
+  position: relative; overflow: hidden;
+  box-shadow: var(--shadow-card);
 }
 .card:hover {
-  background: var(--clr-dark-elevated); transform: translateY(-4px);
-  border-color: rgba(212,168,83,0.25);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.2), 0 0 20px rgba(212,168,83,0.05);
+  background: rgba(255,255,255,0.05);
+  transform: translateY(-8px);
+  border-color: rgba(212,168,83,0.2);
+  box-shadow: var(--shadow-card-hover);
 }
+/* Card edge glow */
+.card::after {
+  content: ''; position: absolute; inset: -1px; border-radius: inherit;
+  background: linear-gradient(135deg, rgba(212,168,83,0.15), transparent 40%, transparent 60%, rgba(212,168,83,0.1));
+  opacity: 0; transition: opacity 0.5s ease; pointer-events: none;
+  z-index: -1;
+}
+.card:hover::after { opacity: 1; }
+
 .icon {
-  width: 56px; height: 56px; border-radius: 50%;
-  background: rgba(212,168,83,0.1); color: var(--clr-accent);
+  width: 60px; height: 60px; border-radius: 50%;
+  background: rgba(212,168,83,0.08); color: var(--clr-accent);
   display: flex; align-items: center; justify-content: center;
-  margin-bottom: 1.5rem; transition: transform 0.4s ease;
+  margin-bottom: 1.5rem; transition: all 0.5s ease;
+  border: 1px solid rgba(212,168,83,0.1);
 }
-.card:hover .icon { transform: scale(1.1); }
+.card:hover .icon {
+  transform: scale(1.12) rotate(-5deg);
+  background: rgba(212,168,83,0.15);
+  box-shadow: 0 0 25px rgba(212,168,83,0.15);
+}
 .title {
   font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700;
   color: var(--clr-text-light); margin-bottom: 0.5rem;
+  transition: color 0.3s ease;
 }
+.card:hover .title { color: var(--clr-accent); }
 .detail {
   font-size: 0.95rem; color: var(--clr-text-muted); line-height: 1.6;
 }
@@ -38,10 +86,18 @@
   color: inherit; text-decoration: none; transition: color 0.3s;
 }
 .detail a:hover { color: var(--clr-accent); }
+.cardArrow {
+  margin-top: 1.5rem;
+  font-size: 1.2rem; color: var(--clr-accent);
+  opacity: 0; transform: translateY(8px);
+  transition: all 0.4s ease;
+}
+.card:hover .cardArrow { opacity: 1; transform: translateY(0); }
 
 .actions { display: flex; justify-content: center; gap: var(--space-sm); flex-wrap: wrap; }
 
 @media (max-width: 768px) {
   .cards { grid-template-columns: 1fr; }
   .actions { flex-direction: column; align-items: stretch; }
+  .meshOrb1, .meshOrb2 { display: none; }
 }

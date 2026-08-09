@@ -72,8 +72,15 @@ export default function StatsCounter() {
 
   return (
     <section className={`${styles.stats} section--dark`} ref={sectionRef}>
+      {/* Decorative orbital rings */}
+      <div className={styles.orbitalContainer}>
+        <div className={styles.orbital1} />
+        <div className={styles.orbital2} />
+        <div className={styles.dotGrid} />
+      </div>
+
       <div className="container">
-        <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
+        <div style={{ textAlign: 'center', marginBottom: '4rem', position: 'relative', zIndex: 2 }}>
           <div className="label" style={{ marginBottom: '1rem' }}>
             Trusted Across India
           </div>
@@ -89,6 +96,7 @@ export default function StatsCounter() {
               key={stat.label}
               ref={(el) => (countersRef.current[i] = el)}
             >
+              <div className={styles.numberGlow} />
               <div className={styles.number}>
                 <span>0</span>
                 <span>{stat.suffix}</span>
