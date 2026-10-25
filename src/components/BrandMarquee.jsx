@@ -60,18 +60,18 @@ export default function BrandMarquee() {
           {duplicatedBrands.map((brand, i) => (
             <Link href={`/${lang}/brands`} className={styles.card} key={`${brand.id}-${i}`}>
               <div className={styles.imgWrap}>
-                {brand.image ? (
+                {brand.logo || brand.image ? (
                   <Image
-                    src={brand.image}
-                    alt={brand.name}
-                    width={280}
-                    height={160}
-                    style={{ objectFit: 'cover', width: '100%', height: '100%' }}
+                    src={brand.logo || brand.image}
+                    alt={`${brand.name} logo`}
+                    width={220}
+                    height={100}
+                    style={{ objectFit: 'contain', maxHeight: '85px', maxWidth: '85%', width: 'auto', height: 'auto' }}
                   />
                 ) : (
-                  <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'var(--clr-dark-elevated)' }}>
-                    <div style={{ fontFamily: 'var(--font-heading)', fontSize: '3rem', fontWeight: 800, color: 'rgba(255,255,255,0.05)' }}>
-                      {brand.name.charAt(0)}
+                  <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <div style={{ fontFamily: 'var(--font-heading)', fontSize: '2rem', fontWeight: 800, color: 'var(--clr-accent)' }}>
+                      {brand.name}
                     </div>
                   </div>
                 )}

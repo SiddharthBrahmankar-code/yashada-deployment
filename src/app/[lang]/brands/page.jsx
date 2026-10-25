@@ -5,12 +5,12 @@ import { getDictionary } from '@/i18n/dictionaries';
 import styles from './brands.module.css';
 
 export const metadata = {
-  title: 'Our Brands | Steelgrip, Abro, Woer | Yashada Enterprises',
-  description: 'Authorized distributor for Steelgrip, Abro, and Woer — India\'s trusted industrial brands for electrical insulation tapes, packing tapes, and heat shrink sleeves.',
-  keywords: ['Steelgrip distributor', 'Abro tape', 'Woer heat shrink', 'industrial brands nashik', 'Yashada Enterprises'],
+  title: 'Our Brands | Steelgrip, Abro, Woer, Haria | Yashada Enterprises',
+  description: 'Authorized distributor for Steelgrip, Abro, Woer, and Haria — India\'s trusted industrial brands for electrical insulation tapes, packing tapes, and heat shrink sleeves.',
+  keywords: ['Steelgrip distributor', 'Abro tape', 'Woer heat shrink', 'Haria masking tape', 'industrial brands nashik', 'Yashada Enterprises'],
   openGraph: {
     title: 'Our Brands | Yashada Enterprises',
-    description: 'Direct distributors for India\'s leading industrial tape manufacturers.',
+    description: 'Direct distributors for India\'s leading industrial tape and electrical component manufacturers.',
   }
 };
 
@@ -52,7 +52,7 @@ export default async function BrandsPage({ params }) {
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
               gap: '2rem',
             }}
           >
@@ -61,34 +61,47 @@ export default async function BrandsPage({ params }) {
                 key={brand.id}
                 className={styles.brandCardHover}
                 style={{
-                  border: '1px solid rgba(255,255,255,0.06)',
+                  border: '1px solid rgba(255,255,255,0.08)',
                   borderRadius: 'var(--radius-lg)',
-                  background: 'rgba(255,255,255,0.02)',
+                  background: 'var(--clr-dark-surface)',
                   overflow: 'hidden',
-                  transition: 'border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
+                  transition: 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
+                  boxShadow: 'var(--shadow-card)',
                 }}
               >
-                {/* Brand image */}
-                {brand.image ? (
-                  <div style={{ position: 'relative', aspectRatio: '16/9', overflow: 'hidden' }}>
+                {/* Brand logo container */}
+                <div
+                  style={{
+                    position: 'relative',
+                    aspectRatio: '16/9',
+                    background: '#ffffff',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    padding: '2rem',
+                    borderBottom: '1px solid rgba(255,255,255,0.06)',
+                  }}
+                >
+                  {brand.logo || brand.image ? (
                     <Image
-                      src={brand.image}
-                      alt={`${brand.name} authorized distribution by Yashada`}
-                      fill
-                      sizes="(max-width: 768px) 100vw, 33vw"
+                      src={brand.logo || brand.image}
+                      alt={`${brand.name} logo`}
+                      width={240}
+                      height={120}
                       style={{
-                        objectFit: 'cover',
-                        transition: 'transform 0.6s cubic-bezier(0.16,1,0.3,1)',
+                        objectFit: 'contain',
+                        maxHeight: '100px',
+                        maxWidth: '85%',
+                        width: 'auto',
+                        height: 'auto',
                       }}
                     />
-                  </div>
-                ) : (
-                  <div style={{ position: 'relative', aspectRatio: '16/9', overflow: 'hidden', background: 'var(--clr-dark-elevated)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                     <div style={{ fontFamily: 'var(--font-heading)', fontSize: '5rem', fontWeight: 800, color: 'rgba(255,255,255,0.05)' }}>
-                       {brand.name.charAt(0)}
-                     </div>
-                  </div>
-                )}
+                  ) : (
+                    <div style={{ fontFamily: 'var(--font-heading)', fontSize: '3rem', fontWeight: 800, color: '#181820' }}>
+                      {brand.name}
+                    </div>
+                  )}
+                </div>
 
                 <div style={{ padding: '2rem' }}>
                   <div
@@ -96,16 +109,16 @@ export default async function BrandsPage({ params }) {
                       display: 'inline-flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      padding: '0.5rem 1rem',
+                      padding: '0.4rem 0.9rem',
                       borderRadius: 'var(--radius-sm)',
                       background: 'rgba(212,168,83,0.1)',
-                      border: '1px solid rgba(212,168,83,0.2)',
+                      border: '1px solid rgba(212,168,83,0.25)',
                       color: 'var(--clr-accent)',
                       fontSize: '1rem',
                       fontFamily: 'var(--font-heading)',
                       fontWeight: 700,
                       letterSpacing: '0.05em',
-                      marginBottom: '1rem',
+                      marginBottom: '0.75rem',
                     }}
                   >
                     {brand.name}
